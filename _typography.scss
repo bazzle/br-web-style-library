@@ -1,0 +1,55 @@
+@use "./all-vars.scss" as *;
+
+.text-std{
+	@extend %text-std;
+}
+.text-link{
+	@extend %text-link;
+}
+.text-body{
+	@extend %text-body;
+}
+.text-intro{
+	@extend %text-intro;
+}
+.text-medium{
+	@extend %text-medium;
+}
+.text-heading{
+	@extend %text-heading;
+}
+.text-display{
+	@extend %text-display;;
+}
+.text-blocky{
+	@extend %text-blocky;
+}
+.text-miniscule{
+	@extend %text-miniscule;
+}
+
+p.outset-text{
+	line-height: 1.4;
+	color: var(--color-accent-alt);
+	border-left: 2px solid var(--color-accent-alt);
+	padding-left: 2rem;
+	position: relative;
+	@include break(tablet){
+		left: -2rem;
+	}
+}
+
+h2, h3, h4, h5, h6{
+	@extend %text-heading;
+}
+
+h2, h3, h4, h5, h6, p, ul, ol{
+	margin-bottom: 1em;
+}
+
+p, li{
+	max-width: 60ch;
+	@media print{
+		max-width: 100rem;
+	}
+}

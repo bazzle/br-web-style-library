@@ -1,0 +1,387 @@
+/* Colours ------------------------------------------------- */
+
+
+@mixin svgColor($color: var(--color-foreground)){
+	path, clipPath, rect, circle{
+		fill: $color;
+		color: $color;
+	}
+	text{
+		color: $color;
+	}
+}
+
+
+
+/* Variables ------------------------------------------------- */
+
+$border-radius: 4px;
+$gutter-padding: 4vw;
+$block-spacing: clamp(3.5rem, 6vw, 6.5rem);
+$block-spacing--shallow--static: 2rem;
+$block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
+$block-spacing--deep: clamp(8rem, 12vw, 14rem);
+$column-gap: clamp(2rem, 5vw, 5rem);
+$site-width: 1600px;
+$site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
+
+
+
+/* Typography ------------------------------------------------- */
+
+// largest size, percentage reduction to get smallest size, responsive size
+@function responsiveSize($initial, $pcreduction, $vw) {
+	$reduction: $initial * ((100 - $pcreduction) / 100);
+	@return clamp(#{$reduction}rem, #{$vw}vw, #{$initial}rem);
+}
+
+// For display only
+$font-size-display: responsiveSize(11, 40, 11);
+// For display only
+$font-size-display-small: responsiveSize(4, 35, 4);
+// For headings only
+$font-size-heading: responsiveSize(2.8, 5, 2.8);
+// For small headings
+$font-size-heading-small: responsiveSize(2.2, 5, 2.2);
+// For general use
+$font-size-medium: responsiveSize(3.2, 30, 3.2);
+// Default font size
+$font-size-std: responsiveSize(1.8, 20, 1.8);
+// For body only
+$font-size-body: responsiveSize(1.8, 20, 1.8);
+// For body standaouts
+$font-size-body-intro: responsiveSize(2.6, 5, 2.6);
+// For blocky text, taglines and other reasons
+$font-size-blocky: responsiveSize(1.6, 8, 1.6);
+// For tiny text
+$font-size-tiny: 1.4rem;
+// For exceptional reasons
+$font-size-miniscule: 1.25rem;
+
+$font-body: "degular-variable", sans-serif;
+$font-std: "degular-variable", sans-serif;
+$font-display: "degular-variable", sans-serif;
+$font-text: "degular-variable", sans-serif;
+$font-blocky: "degular-variable", sans-serif;
+
+$dark-mode-weight: 300;
+$dark-mode-weight-bold: 600;
+$light-mode-weight: 550;
+$light-mode-weight-bold: 700;
+
+%text-display{
+	font-family: $font-display;
+	font-size: $font-size-display;
+	font-style: normal;
+	line-height: 1;
+	font-weight: 760;
+	font-variation-settings: 'opsz' 72;
+	:global(body.light-mode) &{
+		font-weight: 780;
+	}
+	@media print{
+		font-weight: 780;
+	}
+}
+
+%text-display-small{
+	font-family: $font-display;
+	font-size: $font-size-display-small;
+	font-style: normal;
+	line-height: 1.1;
+	font-variation-settings: 'opsz' 40;
+	font-weight: 580;
+	:global(body.light-mode) &{
+		font-weight: $light-mode-weight-bold;
+	}
+	@media print{
+		font-size: 3rem;
+		font-weight: 620;
+	}
+}
+
+%text-std{
+	font-family: $font-text;
+	font-size: $font-size-std;
+	font-style: normal;
+	line-height: 1.4;
+	font-variation-settings: 'opsz' 6;
+	font-weight: $dark-mode-weight;
+	:global(body.light-mode) &{
+		font-weight: $light-mode-weight;
+	}
+	&.light-mode{
+		font-weight: $light-mode-weight;
+	}
+	@media print{
+		font-weight: $light-mode-weight;
+	}
+	strong, b{
+		font-weight: 600;
+		:global(body.light-mode) &{
+			font-weight: $light-mode-weight-bold;
+		}
+		@media print{
+			font-weight: $light-mode-weight-bold;
+		}
+	}
+}
+
+%text-link{
+	font-family: $font-text;
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: .05em;
+	font-style: normal;
+	font-weight: $dark-mode-weight-bold;
+	:global(body.light-mode) &{
+		text-underline-offset: .15em;
+		text-decoration-thickness: .08em;
+		font-weight: $light-mode-weight-bold;
+	}
+	@media print{
+		font-weight: $light-mode-weight-bold;
+		text-underline-offset: .15em;
+		text-decoration-thickness: .08em;
+	}
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+%text-body{
+	font-family: $font-body;
+	font-size: $font-size-body;
+	font-style: normal;
+	line-height: 1.5;
+	font-variation-settings: 'opsz' 6;
+	font-weight: $dark-mode-weight;
+	:global(body.light-mode) &{
+		font-weight: $light-mode-weight;
+	}
+	@media print{
+		font-weight: $light-mode-weight;
+	}
+	strong, b{
+		font-weight: $dark-mode-weight-bold;
+		:global(body.light-mode) &{
+			font-weight: $light-mode-weight-bold;
+		}
+		@media print{
+			font-weight: $light-mode-weight-bold;
+		}
+	}
+	a{
+		@extend %text-link;
+	}
+}
+
+%text-heading{
+	font-family: $font-std;
+	font-size: $font-size-heading;
+	line-height:1.2;
+	font-variation-settings: 'opsz' 28;
+	font-weight: 500;
+	:global(body.light-mode) &{
+		font-weight: 600;
+	}
+	@media print{
+		font-weight: 600;
+	}
+}
+
+%text-heading-small{
+	font-family: $font-std;
+	font-size: $font-size-heading-small;
+	line-height:1.2;
+	font-variation-settings: 'opsz' 28;
+	font-weight: 500;
+	:global(body.light-mode) &{
+		font-weight: 600;
+	}
+	@media print{
+		font-weight: 600;
+	}
+}
+
+%text-intro{
+	font-size: $font-size-body-intro;
+	line-height: 1.2;
+	font-variation-settings: 'opsz' 26;
+	font-weight: 650;
+	:global(body.light-mode) &{
+		font-weight: 700;
+	}
+	@media print{
+		font-weight: 700;
+	}
+}
+
+%text-medium{
+	font-family: $font-std;
+	font-size: $font-size-medium;
+	font-style: normal;
+	line-height: 1.6;
+	font-variation-settings: 'opsz' 32;
+	font-weight: 450;
+	:global(body.light-mode) &{
+		font-weight: 500;
+	}
+	@media print{
+		font-weight: 500;
+	}
+}
+
+%text-blocky{
+	font-family: $font-blocky;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: $font-size-blocky;
+	letter-spacing: .03em;
+	font-variation-settings: 'opsz' 16;
+	font-weight: 450;
+	:global(body.light-mode) &{
+		letter-spacing: .05em;
+		font-weight: $light-mode-weight;
+	}
+	@media print{
+		font-size: 1.7rem;
+		letter-spacing: .05em;
+		font-weight: $light-mode-weight;
+	}
+}
+
+%text-blocky-bold{
+	font-family: $font-blocky;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: $font-size-blocky;
+	letter-spacing: .03em;
+	font-weight: 550;
+	font-variation-settings: 'opsz' 16;
+	:global(body.light-mode) &{
+		font-weight: 600;
+		letter-spacing: .06em;
+	}
+	@media print{
+		font-weight: 600;
+		letter-spacing: .06em;
+	}
+}
+
+%text-tiny{
+	font-size: $font-size-tiny;
+	font-family: $font-text;
+	font-variation-settings: 'opsz' 6;
+	font-weight: $dark-mode-weight;
+	:global(body.light-mode) &{
+		font-weight: $light-mode-weight;
+	}
+	@media print{
+		font-weight: $light-mode-weight;
+	}
+	strong, b{
+		font-weight: $dark-mode-weight;
+		:global(body.light-mode) &{
+			font-weight: $light-mode-weight-bold;
+		}
+	}
+}
+
+%text-miniscule{
+	font-family: $font-body;
+	font-size: $font-size-miniscule;
+	font-style: normal;
+	line-height: 1.4;
+	font-variation-settings: 'opsz' 6;
+	font-weight: 500;
+	:global(body.light-mode) &{
+		font-weight: $light-mode-weight;
+	}
+	@media print{
+		font-weight: $light-mode-weight;
+	}
+	strong, b{
+		font-weight: $dark-mode-weight-bold;
+		:global(body.light-mode) &{
+			font-weight: $light-mode-weight-bold;
+		}
+	}
+}
+
+@mixin body-formatting{
+	p:not([class]), li:not([class]){
+		margin-bottom: 2rem;
+		@extend %text-body;
+	}
+	h2, h3, h4, h5, h6{
+		margin-bottom: 2rem;
+	}
+	> *:last-child {
+		margin-bottom: 0!important;
+	}
+}
+
+
+/* Breakpoints ------------------------------------------------- */
+
+$breakpoints: (
+    mobile: 359px,
+    mobile-land: 512px,
+    tablet: 641px,
+    desktop: 800px,
+    desktop-mini: 880px,
+    desktop-med: 1025px,
+    mobile-nav: 1090px,
+    desktop-wide: 1200px,
+    desktop-wider: 1340px,
+    desktop-xl: 1408px,
+	site-width-margins: $site-width-margins,
+	site-width: $site-width
+);
+$breakpoints--h: (
+    letterbox: 900px
+);
+
+
+// breakpoint mixins
+@mixin break($breakpoint: medium) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+@mixin break-under($breakpoint: medium) {
+	@if map-has-key($breakpoints, $breakpoint) {
+	  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+		  @content;
+	  }
+	}
+}
+
+@mixin break-between($breakpoint-lower, $breakpoint-higher){
+	@media screen and (min-width: map-get($breakpoints, $breakpoint-lower)) and (max-width: map-get($breakpoints, $breakpoint-higher)) {
+		@content;
+	}
+}
+
+// height 
+@mixin break--h($breakpoint) {
+	@if map-has-key($breakpoints--h, $breakpoint) {
+		@media screen and (max-height: map-get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
+			@content;
+		}
+	}
+}
+
+
+/* Misc ------------------------------------------------- */
+
+@mixin ridged-line{
+    height: 2px;
+	background-color: var(--color-ridged-line-shadow);
+    border-bottom: 1px solid var(--color-ridged-line-light);
+}

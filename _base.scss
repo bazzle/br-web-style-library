@@ -1,0 +1,72 @@
+@use "./all-vars.scss" as *;
+
+html{
+	font-size: 10px;
+	scroll-behavior: smooth;
+	@media print{
+		font-size: 7px;
+	}
+}
+
+body{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: var(--color-bg-off-solid);
+	color: var(--color-foreground);
+	@extend %text-std;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection{
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+}
+
+main{
+	overflow-x: hidden;
+}
+
+hr{
+	border: 0;
+	background-color: black;
+	height: 1px;
+	margin-bottom: $block-spacing;
+}
+
+button{
+	all: unset;
+	text-decoration: 0;
+	cursor: pointer;
+	&.button{
+		@extend %text-link;
+	}
+}
+
+input, button, label, textarea{
+	margin-bottom: $block-spacing--shallow;
+}
+
+a:not(:has(> *)){
+	@extend %text-link;
+}
+
+a, button, input, textarea, select{
+	&:focus-visible{
+		outline: 2px solid var(--color-focus);
+		outline-offset: .3em;
+	}
+}
+
+button, 
+a, 
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+label,
+select,
+textarea {
+	min-width: 24px;
+	min-height: 24px;
+}

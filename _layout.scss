@@ -1,0 +1,48 @@
+@use "./all-vars.scss" as *;
+
+.container{
+	position: relative;
+	width: 100%;
+	max-width: $site-width-margins;
+	margin: 0 auto;
+	padding-left: $gutter-padding;
+	padding-right: $gutter-padding;
+	&--vertical-fill{
+		height:100%;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.inner-2col{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	@include break(tablet){
+		gap: $column-gap;
+		flex-direction: row;
+	}
+	.col-1{
+		flex: 2;
+	}
+	.col-2{
+		flex: 5;
+	}
+}
+
+.inner-2col--50-50{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	@include break(tablet){
+		gap: $column-gap;
+		flex-direction: row;
+	}
+	.col-1{
+		flex: 1;
+	}
+	.col-2{
+		flex: 1;
+	}
+}
