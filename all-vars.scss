@@ -1,3 +1,5 @@
+@use './project-specific'; 
+
 /* Colours ------------------------------------------------- */
 
 
@@ -22,7 +24,7 @@ $block-spacing--shallow--static: 2rem;
 $block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
 $block-spacing--deep: clamp(8rem, 12vw, 14rem);
 $column-gap: clamp(2rem, 5vw, 5rem);
-$site-width: 1600px;
+$site-width: project-specific.$site-width;
 $site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
 
 
