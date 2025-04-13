@@ -5,7 +5,7 @@
 
 ## Instructions
 
-1. Clone into your input `/style` folder.
+1. Clone into your input `/styles` folder.
 2. At same level, add a separate folder, and file inside `project-styles/project-specific.scss` file with the following, adjust the values as you like.
 
 ```
