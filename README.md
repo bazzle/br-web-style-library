@@ -7,11 +7,15 @@
 
 1. Clone into your `/assets` folder with the following command:
 
-`git submodule add https://github.com/bazzle/br-web-style-library app/assets/styles`
+```bash
+git submodule add https://github.com/bazzle/br-web-style-library app/assets/styles
+```
 
 2. At `/assets` add a separate folder and file with the content below, adjust the values as you like.
 
-`mkdir -p styles/project-styles && touch styles/project-styles/project-specific.scss`
+```bash
+mkdir -p styles/project-styles && touch styles/project-styles/project-specific.scss
+```
 
 
 ```scss
