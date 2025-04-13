@@ -8,7 +8,7 @@
 1. Clone into your `/assets` folder with the following command:
 
 ```bash
-git submodule add https://github.com/bazzle/br-web-style-library app/assets/styles
+git submodule add https://github.com/bazzle/br-web-style-library app/assets/styles/style-library
 ```
 
 2. At `/assets` add a separate folder and file with the content below, adjust the values as you like.
