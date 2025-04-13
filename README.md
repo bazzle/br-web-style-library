@@ -11,7 +11,7 @@
 
 2. At `/assets` add a separate folder and file with the content below, adjust the values as you like.
 
-`mkdir -p project-styles && touch project-styles/project-specific.scss`
+`mkdir -p styles/project-styles && touch styles/project-styles/project-specific.scss`
 
 
 ```scss
