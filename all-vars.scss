@@ -26,7 +26,7 @@ $block-spacing--deep: clamp(8rem, 12vw, 14rem);
 $column-gap: clamp(2rem, 5vw, 5rem);
 $site-width: project-specific.$site-width;
 $site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
-$container-width: project-specific.$container-width;
+$content-width: project-specific.$content-width;
 
 
 
@@ -40,6 +40,8 @@ $container-width: project-specific.$container-width;
 
 // For display only
 $font-size-display: responsiveSize(11, 40, 11);
+// For display only
+$font-size-display-medium: responsiveSize(8, 40, 8);
 // For display only
 $font-size-display-small: responsiveSize(4, 35, 4);
 // For headings only
@@ -75,6 +77,21 @@ $light-mode-weight-bold: 700;
 %text-display{
 	font-family: $font-display;
 	font-size: $font-size-display;
+	font-style: normal;
+	line-height: 1;
+	font-weight: 760;
+	font-variation-settings: 'opsz' 72;
+	:global(body.light-mode) &{
+		font-weight: 780;
+	}
+	@media print{
+		font-weight: 780;
+	}
+}
+
+%text-display-medium{
+	font-family: $font-display;
+	font-size: $font-size-display-medium;
 	font-style: normal;
 	line-height: 1;
 	font-weight: 760;
