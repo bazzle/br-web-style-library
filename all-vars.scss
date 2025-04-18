@@ -26,6 +26,7 @@ $block-spacing--deep: clamp(8rem, 12vw, 14rem);
 $column-gap: clamp(2rem, 5vw, 5rem);
 $site-width: project-specific.$site-width;
 $site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
+$container-width: project-specific.$container-width;
 
 
 
