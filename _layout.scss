@@ -1,5 +1,9 @@
 @use "all-vars.scss" as *;
 
+main{
+	min-height: 80vh;
+}
+
 .container{
 	position: relative;
 	width: 100%;
