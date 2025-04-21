@@ -195,6 +195,27 @@ $light-mode-weight-bold: 700;
 	a{
 		@extend %text-link;
 	}
+	h2, h3, h4, h5, h6{
+		@extend %text-heading;
+	}
+	
+	h2, h3, h4, h5, h6, p, ul, ol{
+		margin-bottom: 2rem;
+	}
+	
+	li{
+		margin-bottom: .6rem;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+	
+	p, li{
+		max-width: 60ch;
+		@media print{
+			max-width: 100rem;
+		}
+	}
 }
 
 %text-heading{
