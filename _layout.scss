@@ -1,4 +1,4 @@
-@use "all-vars.scss" as *;
+@use "all-vars.scss" as vars;
 
 main{
 	min-height: 80vh;
@@ -7,10 +7,10 @@ main{
 .container{
 	position: relative;
 	width: 100%;
-	max-width: $site-width-margins;
+	max-width: vars.$site-width-margins;
 	margin: 0 auto;
-	padding-left: $gutter-padding;
-	padding-right: $gutter-padding;
+	padding-left: vars.$gutter-padding;
+	padding-right: vars.$gutter-padding;
 	&--vertical-fill{
 		height:100%;
 		flex-grow: 1;
@@ -21,18 +21,18 @@ main{
 
 .content-container{
 	width: 100%;
-	max-width: $content-width;
+	max-width: vars.$content-width;
 	margin: 0 auto;
-	padding-left: $gutter-padding;
-	padding-right: $gutter-padding;
+	padding-left: vars.$gutter-padding;
+	padding-right: vars.$gutter-padding;
 }
 
 .inner-2col{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	@include break(tablet){
-		gap: $column-gap;
+	@include vars.break(tablet){
+		gap: vars.$column-gap;
 		flex-direction: row;
 	}
 	.col-1{
@@ -47,8 +47,8 @@ main{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	@include break(tablet){
-		gap: $column-gap;
+	@include vars.break(tablet){
+		gap: vars.$column-gap;
 		flex-direction: row;
 	}
 	.col-1{
