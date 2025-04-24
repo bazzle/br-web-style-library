@@ -75,14 +75,8 @@ $font-size-miniscule: 1.25rem;
 $font-body: "thermal-variable", sans-serif;
 $font-std: "degular-variable", sans-serif;
 $font-display: "degular-variable", sans-serif;
-$font-text: "degular-variable", sans-serif;
+$font-text: "thermal-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
-
-// Weights
-$dark-mode-weight: 300;
-$dark-mode-weight-bold: 600;
-$light-mode-weight: 350;
-$light-mode-weight-bold: 500;
 
 // Type mixins
 %text-display{
@@ -123,7 +117,7 @@ $light-mode-weight-bold: 500;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 580;
 	:global(body.light-mode) &{
-		font-weight: $light-mode-weight-bold;
+		font-weight: 500;
 	}
 	@media print{
 		font-size: 3rem;
@@ -137,42 +131,65 @@ $light-mode-weight-bold: 500;
 	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 6;
-	font-weight: $dark-mode-weight;
+	font-weight: 300;
 	:global(body.light-mode) &{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	&.light-mode{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	@media print{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	strong, b{
 		font-weight: 600;
 		:global(body.light-mode) &{
-			font-weight: $light-mode-weight-bold;
+			font-weight: 500;
 		}
 		@media print{
-			font-weight: $light-mode-weight-bold;
+			font-weight: 500;
 		}
 	}
 }
 
 %text-link{
-	font-family: $font-text;
+	font-family: $font-body;
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
 	text-decoration-thickness: .05em;
 	font-style: normal;
-	font-weight: $dark-mode-weight-bold;
+	font-weight: 600;
 	:global(body.light-mode) &{
 		text-underline-offset: .15em;
 		text-decoration-thickness: .08em;
-		font-weight: $light-mode-weight-bold;
+		font-weight: 500;
 	}
 	@media print{
-		font-weight: $light-mode-weight-bold;
+		font-weight: 500;
+		text-underline-offset: .15em;
+		text-decoration-thickness: .08em;
+	}
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+%standalone-link{
+	font-family: $font-std;
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: .05em;
+	font-style: normal;
+	font-weight: 600;
+	:global(body.light-mode) &{
+		text-underline-offset: .15em;
+		text-decoration-thickness: .08em;
+		font-weight: 500;
+	}
+	@media print{
+		font-weight: 500;
 		text-underline-offset: .15em;
 		text-decoration-thickness: .08em;
 	}
@@ -193,39 +210,6 @@ $light-mode-weight-bold: 500;
 	}
 	@media print{
 		font-weight: 350;
-	}
-	strong, b{
-		font-weight: 300;
-		:global(body.light-mode) &{
-			font-weight: 500;
-		}
-		@media print{
-			font-weight: 500;
-		}
-	}
-	a{
-		@extend %text-link;
-	}
-	h2, h3, h4, h5, h6{
-		@extend %text-heading;
-	}
-	
-	h2, h3, h4, h5, h6, p, ul, ol{
-		margin-bottom: 2rem;
-	}
-	
-	li{
-		margin-bottom: .6rem;
-		&:last-of-type{
-			margin-bottom: 0;
-		}
-	}
-	
-	p, li{
-		max-width: 60ch;
-		@media print{
-			max-width: 100rem;
-		}
 	}
 }
 
@@ -318,17 +302,17 @@ $light-mode-weight-bold: 500;
 	font-size: $font-size-tiny;
 	font-family: $font-text;
 	font-variation-settings: 'opsz' 6;
-	font-weight: $dark-mode-weight;
+	font-weight: 300;
 	:global(body.light-mode) &{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	@media print{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	strong, b{
-		font-weight: $dark-mode-weight;
+		font-weight: 300;
 		:global(body.light-mode) &{
-			font-weight: $light-mode-weight-bold;
+			font-weight: 500;
 		}
 	}
 }
@@ -341,15 +325,15 @@ $light-mode-weight-bold: 500;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 500;
 	:global(body.light-mode) &{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	@media print{
-		font-weight: $light-mode-weight;
+		font-weight: 350;
 	}
 	strong, b{
-		font-weight: $dark-mode-weight-bold;
+		font-weight: 300-bold;
 		:global(body.light-mode) &{
-			font-weight: $light-mode-weight-bold;
+			font-weight: 500;
 		}
 	}
 }
@@ -359,11 +343,37 @@ $light-mode-weight-bold: 500;
 		margin-bottom: 2rem;
 		@extend %text-body;
 	}
-	h2, h3, h4, h5, h6{
+	h2, h3, h4, h5, h6, p, ul, ol{
 		margin-bottom: 2rem;
+		@extend %text-heading;
 	}
 	> *:last-child {
 		margin-bottom: 0!important;
+	}
+	strong, b{
+		font-weight: 300;
+		:global(body.light-mode) &{
+			font-weight: 500;
+		}
+		@media print{
+			font-weight: 500;
+		}
+	}
+	a{
+		@extend %text-link;
+	}
+	li{
+		margin-bottom: .6rem;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+	p, li{
+		width: 100%;
+		max-width: $content-width;
+		@media print{
+			max-width: 100rem;
+		}
 	}
 }
 
