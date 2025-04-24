@@ -35,8 +35,10 @@ $content-width: project.$content-width;
 
 // largest size, percentage reduction to get smallest size, responsive size
 @function responsiveSize($initial, $pcreduction, $vw) {
-	$reduction: $initial * ((100 - $pcreduction) / 100);
-	@return clamp(#{$reduction}rem, #{$vw}vw, #{$initial}rem);
+	$min: calc(#{$initial}rem * (#{100 - $pcreduction} / 100));
+	$max: #{$initial}rem;
+	$flex: #{$vw}vw;
+	@return clamp(#{$min}, #{$flex}, #{$max});
 }
 
 // For display only
