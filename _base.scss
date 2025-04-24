@@ -1,4 +1,4 @@
-@use "all-vars.scss" as *;
+@use "all-vars.scss" as vars;
 
 html{
 	font-size: 10px;
@@ -14,7 +14,7 @@ body{
 	margin: 0;
 	background-color: var(--color-bg-off-solid);
 	color: var(--color-foreground);
-	@extend %text-std;
+	@include vars.text-std;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +32,7 @@ hr{
 	border: 0;
 	background-color: black;
 	height: 1px;
-	margin-bottom: $block-spacing;
+	margin-bottom: vars.$block-spacing;
 }
 
 button{
@@ -40,16 +40,16 @@ button{
 	text-decoration: 0;
 	cursor: pointer;
 	&.button{
-		@extend %text-link;
+		@include vars.text-link;
 	}
 }
 
 input, button, label, textarea{
-	margin-bottom: $block-spacing--shallow;
+	margin-bottom: vars.$block-spacing--shallow;
 }
 
 a:not(:has(> *)){
-	@extend %text-link;
+	@include vars.text-link;
 }
 
 a, button, input, textarea, select{

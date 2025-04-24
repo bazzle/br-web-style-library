@@ -1,31 +1,31 @@
-@use "all-vars.scss" as *;
+@use "all-vars.scss" as vars;
 
 .text-std{
-	@extend %text-std;
+	@include vars.text-std;
 }
 .text-link{
-	@extend %text-link;
+	@include vars.text-link;
 }
 .text-body{
-	@extend %text-body;
+	@include vars.text-body;
 }
 .text-intro{
-	@extend %text-intro;
+	@include vars.text-intro;
 }
 .text-medium{
-	@extend %text-medium;
+	@include vars.text-medium;
 }
 .text-heading{
-	@extend %text-heading;
+	@include vars.text-heading;
 }
 .text-display{
-	@extend %text-display;
+	@include vars.text-display;
 }
 .text-blocky{
-	@extend %text-blocky;
+	@include vars.text-blocky;
 }
 .text-miniscule{
-	@extend %text-miniscule;
+	@include vars.text-miniscule;
 }
 
 p.outset-text{
@@ -34,7 +34,7 @@ p.outset-text{
 	border-left: 2px solid var(--color-accent-alt);
 	padding-left: 2rem;
 	position: relative;
-	@include break(tablet){
+	@include vars.break(tablet){
 		left: -2rem;
 	}
 }

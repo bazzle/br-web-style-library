@@ -1,4 +1,4 @@
-@use '../project-styles/project-specific';
+@use '../project-styles/project-specific' as project;
 @import url("https://use.typekit.net/xrw6pbn.css");
 
 /* Colours ------------------------------------------------- */
@@ -25,9 +25,9 @@ $block-spacing--shallow--static: 2rem;
 $block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
 $block-spacing--deep: clamp(8rem, 12vw, 14rem);
 $column-gap: clamp(2rem, 5vw, 5rem);
-$site-width: project-specific.$site-width;
+$site-width: project.$site-width;
 $site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
-$content-width: project-specific.$content-width;
+$content-width: project.$content-width;
 
 
 
@@ -79,7 +79,7 @@ $font-text: "thermal-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 
 // Type mixins
-%text-display{
+@mixin text-display{
 	font-family: $font-display;
 	font-size: $font-size-display;
 	font-style: normal;
@@ -94,7 +94,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-display-medium{
+@mixin text-display-medium{
 	font-family: $font-display;
 	font-size: $font-size-display-medium;
 	font-style: normal;
@@ -109,7 +109,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-display-small{
+@mixin text-display-small{
 	font-family: $font-display;
 	font-size: $font-size-display-small;
 	font-style: normal;
@@ -125,7 +125,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-std{
+@mixin text-std{
 	font-family: $font-text;
 	font-size: $font-size-std;
 	font-style: normal;
@@ -152,7 +152,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-link{
+@mixin text-link{
 	font-family: $font-body;
 	color: var(--color-accent);
 	text-decoration: underline;
@@ -175,7 +175,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%standalone-link{
+@mixin standalone-link{
 	font-family: $font-std;
 	color: var(--color-accent);
 	text-decoration: underline;
@@ -198,7 +198,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-body{
+@mixin text-body{
 	font-family: $font-body;
 	font-size: $font-size-body;
 	font-style: normal;
@@ -213,7 +213,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-heading{
+@mixin text-heading{
 	font-family: $font-std;
 	font-size: $font-size-heading;
 	line-height:1.2;
@@ -221,7 +221,7 @@ $font-blocky: "degular-variable", sans-serif;
 	font-weight: 650;
 }
 
-%text-heading-small{
+@mixin text-heading-small{
 	font-family: $font-std;
 	font-size: $font-size-heading-small;
 	line-height:1.2;
@@ -235,7 +235,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-intro{
+@mixin text-intro{
 	font-size: $font-size-body-intro;
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
@@ -248,7 +248,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-medium{
+@mixin text-medium{
 	font-family: $font-std;
 	font-size: $font-size-medium;
 	font-style: normal;
@@ -263,7 +263,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-blocky{
+@mixin text-blocky{
 	font-family: $font-blocky;
 	font-style: normal;
 	text-transform: uppercase;
@@ -280,7 +280,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-blocky-bold{
+@mixin text-blocky-bold{
 	font-family: $font-blocky;
 	font-style: normal;
 	text-transform: uppercase;
@@ -298,7 +298,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-tiny{
+@mixin text-tiny{
 	font-size: $font-size-tiny;
 	font-family: $font-text;
 	font-variation-settings: 'opsz' 6;
@@ -317,7 +317,7 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-miniscule{
+@mixin text-miniscule{
 	font-family: $font-body;
 	font-size: $font-size-miniscule;
 	font-style: normal;
@@ -341,11 +341,11 @@ $font-blocky: "degular-variable", sans-serif;
 @mixin body-formatting{
 	p:not([class]), li:not([class]){
 		margin-bottom: 2rem;
-		@extend %text-body;
+		@include text-body;
 	}
 	h2, h3, h4, h5, h6, p, ul, ol{
 		margin-bottom: 2rem;
-		@extend %text-heading;
+		@include text-heading;
 	}
 	> *:last-child {
 		margin-bottom: 0!important;
@@ -360,7 +360,7 @@ $font-blocky: "degular-variable", sans-serif;
 		}
 	}
 	a{
-		@extend %text-link;
+		@include text-link;
 	}
 	li{
 		margin-bottom: .6rem;
