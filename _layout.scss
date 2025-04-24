@@ -50,6 +50,7 @@ main{
 	@include vars.break(tablet){
 		gap: vars.$column-gap;
 		flex-direction: row;
+		min-width: 30rem;
 	}
 	.col-1{
 		flex: 1;

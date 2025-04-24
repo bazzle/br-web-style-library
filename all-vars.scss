@@ -20,9 +20,10 @@
 
 $border-radius: 4px;
 $gutter-padding: 4vw;
-$block-spacing: clamp(3.5rem, 6vw, 6.5rem);
 $block-spacing--shallow--static: 2rem;
+$block-spacing--tiny: clamp(1rem, 3vw, 3rem);
 $block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
+$block-spacing: clamp(3.5rem, 6vw, 6.5rem);
 $block-spacing--deep: clamp(8rem, 12vw, 14rem);
 $column-gap: clamp(2rem, 5vw, 5rem);
 $site-width: project.$site-width;
@@ -48,6 +49,9 @@ $font-size-display-small: responsiveSize(4, 35, 4);
 
 // For headings only
 $font-size-heading: responsiveSize(2.8, 5, 2.8);
+
+// For larger headings
+$font-size-heading-large: responsiveSize(3.4, 5, 3.4);
 
 // For small headings
 $font-size-heading-small: responsiveSize(2.2, 5, 2.2);
@@ -77,7 +81,6 @@ $font-size-miniscule: 1.25rem;
 $font-body: "thermal-variable", sans-serif;
 $font-std: "degular-variable", sans-serif;
 $font-display: "degular-variable", sans-serif;
-$font-text: "thermal-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 
 // Type mixins
@@ -128,28 +131,28 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 @mixin text-std{
-	font-family: $font-text;
+	font-family: $font-std;
 	font-size: $font-size-std;
 	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 6;
-	font-weight: 300;
+	font-weight: 450;
 	:global(body.light-mode) &{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	&.light-mode{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	@media print{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	strong, b{
-		font-weight: 600;
+		font-weight: 650;
 		:global(body.light-mode) &{
-			font-weight: 500;
+			font-weight: 650;
 		}
 		@media print{
-			font-weight: 500;
+			font-weight: 650;
 		}
 	}
 }
@@ -200,6 +203,16 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
+@mixin standalone-link-inactive{
+	font-family: $font-std;
+	color: var(--color-foreground);
+	font-style: normal;
+	font-weight: 600;
+	@media print{
+		font-weight: 500;
+	}
+}
+
 @mixin text-body{
 	font-family: $font-body;
 	font-size: $font-size-body;
@@ -207,11 +220,11 @@ $font-blocky: "degular-variable", sans-serif;
 	line-height: 1.5;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 200;
-	:global(body.light-mode) &{
-		font-weight: 350;
+	body.light-mode &{
+		font-weight: 450;
 	}
 	@media print{
-		font-weight: 350;
+		font-weight: 450;
 	}
 }
 
@@ -223,12 +236,20 @@ $font-blocky: "degular-variable", sans-serif;
 	font-weight: 650;
 }
 
+@mixin text-heading-thin{
+	font-family: $font-std;
+	font-size: $font-size-heading-large;
+	line-height:1.2;
+	font-variation-settings: 'opsz' 28;
+	font-weight: 450;
+}
+
 @mixin text-heading-small{
 	font-family: $font-std;
 	font-size: $font-size-heading-small;
 	line-height:1.2;
-	font-variation-settings: 'opsz' 28;
-	font-weight: 500;
+	font-variation-settings: 'opsz' 40;
+	font-weight: 400;
 	:global(body.light-mode) &{
 		font-weight: 600;
 	}
@@ -238,6 +259,7 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 @mixin text-intro{
+	font-family: $font-std;
 	font-size: $font-size-body-intro;
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
@@ -302,7 +324,7 @@ $font-blocky: "degular-variable", sans-serif;
 
 @mixin text-tiny{
 	font-size: $font-size-tiny;
-	font-family: $font-text;
+	font-family: $font-body;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
 	:global(body.light-mode) &{
@@ -341,43 +363,8 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 @mixin body-formatting{
-	p:not([class]), li:not([class]){
-		margin-bottom: 2rem;
-		@include text-body;
-	}
-	h2, h3, h4, h5, h6{
-		@include text-heading;
-	}
-	h2, h3, h4, h5, h6, p, ul, ol{
-		margin-bottom: 2rem;
-	}
-	> *:last-child {
-		margin-bottom: 0!important;
-	}
-	strong, b{
-		font-weight: 300;
-		:global(body.light-mode) &{
-			font-weight: 500;
-		}
-		@media print{
-			font-weight: 500;
-		}
-	}
 	a{
 		@include text-link;
-	}
-	li{
-		margin-bottom: .6rem;
-		&:last-of-type{
-			margin-bottom: 0;
-		}
-	}
-	p, li{
-		width: 100%;
-		max-width: $content-width;
-		@media print{
-			max-width: 100rem;
-		}
 	}
 }
 
