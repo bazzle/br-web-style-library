@@ -345,9 +345,11 @@ $font-blocky: "degular-variable", sans-serif;
 		margin-bottom: 2rem;
 		@include text-body;
 	}
+	h2, h3, h4, h5, h6{
+		@include text-heading;
+	}
 	h2, h3, h4, h5, h6, p, ul, ol{
 		margin-bottom: 2rem;
-		@include text-heading;
 	}
 	> *:last-child {
 		margin-bottom: 0!important;
