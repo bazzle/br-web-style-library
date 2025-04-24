@@ -38,3 +38,14 @@ p.outset-text{
 		left: -2rem;
 	}
 }
+
+h2, h3, h4, h5, h6{
+	&:not([class]){
+		@include vars.text-heading;
+	}
+}
+h2, h3, h4, h5, h6, p, ul, ol{
+	&:not([class]){
+		margin-bottom: vars.$block-spacing--tiny;
+	}
+}
