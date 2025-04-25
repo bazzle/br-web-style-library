@@ -81,7 +81,6 @@ $font-size-miniscule: 1.25rem;
 $font-body: "thermal-variable", sans-serif;
 $font-std: "degular-variable", sans-serif;
 $font-display: "degular-variable", sans-serif;
-$font-text: "thermal-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 
 // Type mixins
@@ -132,28 +131,28 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 @mixin text-std{
-	font-family: $font-text;
+	font-family: $font-std;
 	font-size: $font-size-std;
 	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 6;
-	font-weight: 300;
+	font-weight: 450;
 	:global(body.light-mode) &{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	&.light-mode{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	@media print{
-		font-weight: 350;
+		font-weight: 500;
 	}
 	strong, b{
-		font-weight: 600;
+		font-weight: 650;
 		:global(body.light-mode) &{
-			font-weight: 500;
+			font-weight: 650;
 		}
 		@media print{
-			font-weight: 500;
+			font-weight: 650;
 		}
 	}
 }
@@ -204,6 +203,16 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
+@mixin standalone-link-inactive{
+	font-family: $font-std;
+	color: var(--color-foreground);
+	font-style: normal;
+	font-weight: 600;
+	@media print{
+		font-weight: 500;
+	}
+}
+
 @mixin text-body{
 	font-family: $font-body;
 	font-size: $font-size-body;
@@ -211,11 +220,11 @@ $font-blocky: "degular-variable", sans-serif;
 	line-height: 1.5;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 200;
-	:global(body.light-mode) &{
-		font-weight: 350;
+	body.light-mode &{
+		font-weight: 450;
 	}
 	@media print{
-		font-weight: 350;
+		font-weight: 450;
 	}
 }
 
@@ -315,7 +324,7 @@ $font-blocky: "degular-variable", sans-serif;
 
 @mixin text-tiny{
 	font-size: $font-size-tiny;
-	font-family: $font-text;
+	font-family: $font-body;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
 	:global(body.light-mode) &{
@@ -354,37 +363,8 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 @mixin body-formatting{
-	p:not([class]), li:not([class]){
-		margin-bottom: 2rem;
-		@include text-body;
-	}
-	> *:last-child {
-		margin-bottom: 0!important;
-	}
-	strong, b{
-		font-weight: 550;
-		:global(body.light-mode) &{
-			font-weight: 600;
-		}
-		@media print{
-			font-weight: 600;
-		}
-	}
 	a{
 		@include text-link;
-	}
-	li{
-		margin-bottom: .6rem;
-		&:last-of-type{
-			margin-bottom: 0;
-		}
-	}
-	p, li{
-		width: 100%;
-		max-width: $content-width;
-		@media print{
-			max-width: 100rem;
-		}
 	}
 }
 

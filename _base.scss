@@ -48,7 +48,7 @@ input, button, label, textarea{
 	margin-bottom: vars.$block-spacing--shallow;
 }
 
-a:not(:has(> *)){
+a{
 	@include vars.text-link;
 }
 

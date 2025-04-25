@@ -48,4 +48,41 @@ h2, h3, h4, h5, h6, p, ul, ol{
 	&:not([class]){
 		margin-bottom: vars.$block-spacing--tiny;
 	}
+	> *:last-child {
+		margin-bottom: 0!important;
+	}
+}
+p, li{
+	&:not([class]){
+		max-width: vars.$content-width;
+		@include vars.text-body;
+	}
+}
+strong, b{
+	&:not([class]){
+		font-weight: 550;
+		:global(body.light-mode) &{
+			font-weight: 600;
+		}
+		@media print{
+			font-weight: 600;
+		}
+	}
+}
+li{
+	&:not([class]){
+		margin-bottom: .6rem;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+}
+p, li{
+	&:not([class]){
+		width: 100%;
+		max-width: vars.$content-width;
+		@media print{
+			max-width: 100rem;
+		}
+	}
 }
