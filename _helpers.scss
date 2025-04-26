@@ -1,5 +1,3 @@
-@use "all-vars.scss" as vars;
-
 .highlight{
 	color: var(--color-accent);
 }
@@ -13,23 +11,23 @@
 }
 
 .mt{
-	margin-top: vars.$block-spacing;
+	margin-top: $block-spacing;
 }
 .mb{
-	margin-bottom: vars.$block-spacing;
+	margin-bottom: $block-spacing;
 }
 .mb--deep{
-	margin-bottom: vars.$block-spacing--deep;
+	margin-bottom: $block-spacing--deep;
 }
 .mb--shallow{
-	margin-bottom: vars.$block-spacing--shallow;
+	margin-bottom: $block-spacing--shallow;
 }
 
 .pt{
-	padding-top: vars.$block-spacing;
+	padding-top: $block-spacing;
 }
 .pb{
-	padding-bottom: vars.$block-spacing;
+	padding-bottom: $block-spacing;
 }
 
 .pb--0{
@@ -37,10 +35,10 @@
 }
 
 .pt--deep{
-	padding-top: vars.$block-spacing--deep;
+	padding-top: $block-spacing--deep;
 }
 .pb--deep{
-	padding-bottom: vars.$block-spacing--deep;
+	padding-bottom: $block-spacing--deep;
 }
 
 .color-accent{
@@ -99,13 +97,13 @@
 }
 
 .hide-mobile{
-	@include vars.break-under(tablet){
+	@include break-under(tablet){
 		display: none;
 	}
 }
 
 .show-mobile{
-	@include vars.break(tablet){
+	@include break(tablet){
 		display: none;
 	}
 }
