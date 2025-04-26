@@ -4,7 +4,7 @@
 /* Useful helpers -------------------------------------- */
 
 @mixin light-mode-wrapper {
-	@at-root body.light-mode #{&} {
+	body.light-mode &{
 		@content;
 	}
 	:global(body.light-mode) & {
@@ -231,7 +231,7 @@ $font-blocky: "degular-variable", sans-serif;
 	line-height: 1.5;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
-	@at-root body.light-mode #{&} {
+	body.light-mode &{
 		font-weight: 450;
 	}
 	:global(body.light-mode) & {
