@@ -1,6 +1,17 @@
 @use '../project-styles/project-specific' as project;
 @import url("https://use.typekit.net/xrw6pbn.css");
 
+/* Useful helpers -------------------------------------- */
+
+@mixin light-mode-wrapper {
+	@at-root body.light-mode #{&} {
+		@content;
+	}
+	:global(body.light-mode) & {
+		@content;
+	}
+}
+
 /* Colours ------------------------------------------------- */
 
 
@@ -219,8 +230,11 @@ $font-blocky: "degular-variable", sans-serif;
 	font-style: normal;
 	line-height: 1.5;
 	font-variation-settings: 'opsz' 6;
-	font-weight: 200;
-	body.light-mode &{
+	font-weight: 300;
+	@at-root body.light-mode #{&} {
+		font-weight: 450;
+	}
+	:global(body.light-mode) & {
 		font-weight: 450;
 	}
 	@media print{
