@@ -61,7 +61,7 @@ p, li{
 strong, b{
 	&:not([class]){
 		font-weight: 550;
-		@at-root body.light-mode #{&} {
+		body.light-mode &{
 			font-weight: 600;
 		}
 		@media print{
