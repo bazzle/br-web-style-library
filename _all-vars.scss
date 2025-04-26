@@ -7,7 +7,7 @@
 	body.light-mode &{
 		@content;
 	}
-	:global(body.light-mode) & {
+	@media print{
 		@content;
 	}
 }
@@ -95,44 +95,38 @@ $font-display: "degular-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 
 // Type mixins
-@mixin text-display{
+%text-display{
 	font-family: $font-display;
 	font-size: $font-size-display;
 	font-style: normal;
 	line-height: 1;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
-	:global(body.light-mode) &{
-		font-weight: 780;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 780;
 	}
 }
 
-@mixin text-display-medium{
+%text-display-medium{
 	font-family: $font-display;
 	font-size: $font-size-display-medium;
 	font-style: normal;
 	line-height: 1;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
-	:global(body.light-mode) &{
-		font-weight: 780;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 780;
 	}
 }
 
-@mixin text-display-small{
+%text-display-small{
 	font-family: $font-display;
 	font-size: $font-size-display-small;
 	font-style: normal;
 	line-height: 1.1;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 580;
-	:global(body.light-mode) &{
+	@include light-mode-wrapper{
 		font-weight: 500;
 	}
 	@media print{
@@ -141,34 +135,25 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-@mixin text-std{
+%text-std{
 	font-family: $font-std;
 	font-size: $font-size-std;
 	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 450;
-	:global(body.light-mode) &{
-		font-weight: 500;
-	}
-	&.light-mode{
-		font-weight: 500;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 500;
 	}
 	strong, b{
 		font-weight: 650;
-		:global(body.light-mode) &{
-			font-weight: 650;
-		}
-		@media print{
+		@include light-mode-wrapper{
 			font-weight: 650;
 		}
 	}
 }
 
-@mixin text-link{
+%text-link{
 	font-family: $font-body;
 	color: var(--color-accent);
 	text-decoration: underline;
@@ -176,22 +161,17 @@ $font-blocky: "degular-variable", sans-serif;
 	text-decoration-thickness: .05em;
 	font-style: normal;
 	font-weight: 600;
-	:global(body.light-mode) &{
+	@include light-mode-wrapper{
 		text-underline-offset: .15em;
 		text-decoration-thickness: .08em;
 		font-weight: 500;
-	}
-	@media print{
-		font-weight: 500;
-		text-underline-offset: .15em;
-		text-decoration-thickness: .08em;
 	}
 	&:hover{
 		text-decoration: none;
 	}
 }
 
-@mixin standalone-link{
+%standalone-link{
 	font-family: $font-std;
 	color: var(--color-accent);
 	text-decoration: underline;
@@ -199,22 +179,17 @@ $font-blocky: "degular-variable", sans-serif;
 	text-decoration-thickness: .05em;
 	font-style: normal;
 	font-weight: 600;
-	:global(body.light-mode) &{
+	@include light-mode-wrapper{
 		text-underline-offset: .15em;
 		text-decoration-thickness: .08em;
 		font-weight: 500;
-	}
-	@media print{
-		font-weight: 500;
-		text-underline-offset: .15em;
-		text-decoration-thickness: .08em;
 	}
 	&:hover{
 		text-decoration: none;
 	}
 }
 
-@mixin standalone-link-inactive{
+%standalone-link-inactive{
 	font-family: $font-std;
 	color: var(--color-foreground);
 	font-style: normal;
@@ -224,84 +199,76 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-@mixin text-body{
+%text-body{
 	font-family: $font-body;
 	font-size: $font-size-body;
 	font-style: normal;
 	line-height: 1.5;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
-	body.light-mode &{
-		font-weight: 450;
-	}
-	:global(body.light-mode) & {
-		font-weight: 450;
-	}
-	@media print{
-		font-weight: 450;
+	@include light-mode-wrapper{
+		font-weight: 400;
 	}
 }
 
-@mixin text-heading{
+%text-heading{
 	font-family: $font-std;
 	font-size: $font-size-heading;
 	line-height:1.2;
 	font-variation-settings: 'opsz' 20;
-	font-weight: 650;
+	font-weight: 400;
+	@include light-mode-wrapper{
+		font-weight: 550;
+	}
 }
 
-@mixin text-heading-thin{
+%text-heading-thin{
 	font-family: $font-std;
-	font-size: $font-size-heading-large;
+	font-size: $font-size-heading;
 	line-height:1.2;
 	font-variation-settings: 'opsz' 28;
-	font-weight: 450;
+	font-weight: 350;
+	@include light-mode-wrapper{
+		font-weight: 450;
+	}
+
 }
 
-@mixin text-heading-small{
+%text-heading-small{
 	font-family: $font-std;
 	font-size: $font-size-heading-small;
 	line-height:1.2;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 400;
-	:global(body.light-mode) &{
-		font-weight: 600;
-	}
-	@media print{
-		font-weight: 600;
+	@include light-mode-wrapper{
+		font-weight: 550;
 	}
 }
 
-@mixin text-intro{
+%text-intro{
 	font-family: $font-std;
 	font-size: $font-size-body-intro;
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
 	font-weight: 650;
-	:global(body.light-mode) &{
-		font-weight: 700;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 700;
 	}
 }
 
-@mixin text-medium{
+%text-medium{
 	font-family: $font-std;
 	font-size: $font-size-medium;
 	font-style: normal;
 	line-height: 1.6;
 	font-variation-settings: 'opsz' 32;
 	font-weight: 450;
-	:global(body.light-mode) &{
-		font-weight: 500;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 500;
 	}
 }
 
-@mixin text-blocky{
+%text-blocky{
 	font-family: $font-blocky;
 	font-style: normal;
 	text-transform: uppercase;
@@ -309,16 +276,15 @@ $font-blocky: "degular-variable", sans-serif;
 	letter-spacing: .03em;
 	font-variation-settings: 'opsz' 16;
 	font-weight: 450;
-	:global(body.light-mode) &{
+	@include light-mode-wrapper{
 		font-weight: 500;
 	}
 	@media print{
 		font-size: 1.7rem;
-		font-weight: 500;
 	}
 }
 
-@mixin text-blocky-bold{
+%text-blocky-bold{
 	font-family: $font-blocky;
 	font-style: normal;
 	text-transform: uppercase;
@@ -326,59 +292,49 @@ $font-blocky: "degular-variable", sans-serif;
 	letter-spacing: .03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
-	:global(body.light-mode) &{
-		font-weight: 600;
-		letter-spacing: .06em;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 600;
 		letter-spacing: .06em;
 	}
 }
 
-@mixin text-tiny{
+%text-tiny{
 	font-size: $font-size-tiny;
 	font-family: $font-body;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
-	:global(body.light-mode) &{
-		font-weight: 350;
-	}
 	@media print{
 		font-weight: 350;
 	}
 	strong, b{
 		font-weight: 300;
-		:global(body.light-mode) &{
+		@include light-mode-wrapper{
 			font-weight: 500;
 		}
 	}
 }
 
-@mixin text-miniscule{
+%text-miniscule{
 	font-family: $font-body;
 	font-size: $font-size-miniscule;
 	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 500;
-	:global(body.light-mode) &{
-		font-weight: 350;
-	}
-	@media print{
+	@include light-mode-wrapper{
 		font-weight: 350;
 	}
 	strong, b{
 		font-weight: 300-bold;
-		:global(body.light-mode) &{
+		@include light-mode-wrapper{
 			font-weight: 500;
 		}
 	}
 }
 
-@mixin body-formatting{
+%body-formatting{
 	a{
-		@include text-link;
+		@extend %text-link;
 	}
 }
 

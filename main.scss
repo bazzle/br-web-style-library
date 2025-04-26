@@ -1,6 +1,8 @@
-@use "globals";
-@use "reset";
-@use "base";
-@use "layout";
-@use "typography";
-@use "helpers";
+@import "all-vars";
+@import "globals";
+@import "reset";
+@import "base";
+@import "layout";
+@import "typography";
+@import "helpers";
+
