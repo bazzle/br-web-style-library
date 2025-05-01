@@ -1,3 +1,5 @@
+@use "all-vars" as vars;
+
 .text-std{
 	@extend %text-std;
 }
@@ -32,7 +34,7 @@ p.outset-text{
 	border-left: 2px solid var(--color-accent-alt);
 	padding-left: 2rem;
 	position: relative;
-	@include break(tablet){
+	@include vars.break(tablet){
 		left: -2rem;
 	}
 }
@@ -44,7 +46,7 @@ h2, h3, h4, h5, h6{
 }
 h2, h3, h4, h5, h6, p, ul, ol{
 	&:not([class]){
-		margin-bottom: $block-spacing--tiny;
+		margin-bottom: vars.$block-spacing--tiny;
 	}
 	> *:last-child {
 		margin-bottom: 0!important;
@@ -52,7 +54,7 @@ h2, h3, h4, h5, h6, p, ul, ol{
 }
 p, li{
 	&:not([class]){
-		max-width: $content-width;
+		max-width: vars.$content-width;
 		@extend %text-body;
 	}
 }
@@ -78,7 +80,7 @@ li{
 p, li{
 	&:not([class]){
 		width: 100%;
-		max-width: $content-width;
+		max-width: vars.$content-width;
 		@media print{
 			max-width: 100rem;
 		}

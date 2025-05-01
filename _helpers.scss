@@ -1,3 +1,5 @@
+@use "all-vars" as vars;
+
 .highlight{
 	color: var(--color-accent);
 }
@@ -11,23 +13,23 @@
 }
 
 .mt{
-	margin-top: $block-spacing;
+	margin-top: vars.$block-spacing;
 }
 .mb{
-	margin-bottom: $block-spacing;
+	margin-bottom: vars.$block-spacing;
 }
 .mb--deep{
-	margin-bottom: $block-spacing--deep;
+	margin-bottom: vars.$block-spacing--deep;
 }
 .mb--shallow{
-	margin-bottom: $block-spacing--shallow;
+	margin-bottom: vars.$block-spacing--shallow;
 }
 
 .pt{
-	padding-top: $block-spacing;
+	padding-top: vars.$block-spacing;
 }
 .pb{
-	padding-bottom: $block-spacing;
+	padding-bottom: vars.$block-spacing;
 }
 
 .pb--0{
@@ -35,10 +37,10 @@
 }
 
 .pt--deep{
-	padding-top: $block-spacing--deep;
+	padding-top: vars.$block-spacing--deep;
 }
 .pb--deep{
-	padding-bottom: $block-spacing--deep;
+	padding-bottom: vars.$block-spacing--deep;
 }
 
 .color-accent{
@@ -97,13 +99,13 @@
 }
 
 .hide-mobile{
-	@include break-under(tablet){
+	@include vars.break-under(tablet){
 		display: none;
 	}
 }
 
 .show-mobile{
-	@include break(tablet){
+	@include vars.break(tablet){
 		display: none;
 	}
 }

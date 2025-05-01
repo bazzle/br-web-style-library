@@ -1,3 +1,5 @@
+@use "all-vars" as vars;
+
 html{
 	font-size: 10px;
 	scroll-behavior: smooth;
@@ -30,7 +32,7 @@ hr{
 	border: 0;
 	background-color: black;
 	height: 1px;
-	margin-bottom: $block-spacing;
+	margin-bottom: vars.$block-spacing;
 }
 
 button{
@@ -43,7 +45,7 @@ button{
 }
 
 input, button, label, textarea{
-	margin-bottom: $block-spacing--shallow;
+	margin-bottom: vars.$block-spacing--shallow;
 }
 
 a{
