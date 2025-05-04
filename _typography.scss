@@ -46,7 +46,7 @@ h2, h3, h4, h5, h6{
 }
 h2, h3, h4, h5, h6, p, ul, ol{
 	&:not([class]){
-		margin-bottom: vars.$block-spacing--tiny;
+		margin-bottom: vars.$block-spacing--text;
 	}
 	> *:last-child {
 		margin-bottom: 0!important;
