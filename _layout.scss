@@ -19,6 +19,14 @@ main{
 	}
 }
 
+.container____extended{
+	width: 100%;
+	max-width: vars.$extended-width;
+	margin: 0 auto;
+	padding-left: vars.$gutter-padding;
+	padding-right: vars.$gutter-padding;
+}
+
 .content-container{
 	width: 100%;
 	max-width: vars.$content-width;
