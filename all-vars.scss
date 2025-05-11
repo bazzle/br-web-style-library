@@ -230,10 +230,15 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-heading{
+%text-heading-defaults{
+	color: var(--color-accent);
 	font-family: $font-std;
-	font-size: $font-size-heading;
 	line-height:1.2;
+}
+
+%text-heading{
+	@extend %text-heading-defaults;
+	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
 	font-weight: 400;
 	@include light-mode-wrapper{
@@ -242,9 +247,8 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-heading--chunky{
-	font-family: $font-std;
+	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
-	line-height:1.2;
 	font-variation-settings: 'opsz' 20;
 	font-weight: 650;
 	@include light-mode-wrapper{
@@ -253,9 +257,8 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-heading-thin{
-	font-family: $font-std;
+	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
-	line-height:1.2;
 	font-variation-settings: 'opsz' 28;
 	font-weight: 350;
 	@include light-mode-wrapper{
@@ -265,9 +268,8 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-heading-small{
-	font-family: $font-std;
+	@extend %text-heading-defaults;
 	font-size: $font-size-heading-small;
-	line-height:1.2;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 400;
 	@include light-mode-wrapper{
