@@ -164,24 +164,29 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-link{
-	font-family: $font-body;
+%text-link-defaults{
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
 	text-decoration-thickness: .05em;
 	font-style: normal;
-	@extend %body-weight-bold;
+	&:hover{
+		text-decoration: none;
+	}
 	@include light-mode-wrapper{
 		text-underline-offset: .15em;
 		text-decoration-thickness: .08em;
 	}
-	&:hover{
-		text-decoration: none;
-	}
+}
+
+%text-link{
+	font-family: $font-body;
+	@extend %text-link-defaults;
+	@extend %body-weight-bold;
 }
 
 %standalone-link{
+	@extend %text-link;
 	font-size: $font-size-std;
 	font-family: $font-std;
 	color: var(--color-accent);
@@ -214,13 +219,13 @@ $font-blocky: "degular-variable", sans-serif;
 	font-family: $font-body;
 	font-size: $font-size-body;
 	font-style: normal;
-	line-height: 1.5;
+	line-height: 1.7;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
 	@include light-mode-wrapper{
 		font-weight: 500;
 	}
-	strong, b{
+	strong, b, a{
 		@extend %body-weight-bold;
 	}
 }
@@ -233,6 +238,17 @@ $font-blocky: "degular-variable", sans-serif;
 	font-weight: 400;
 	@include light-mode-wrapper{
 		font-weight: 550;
+	}
+}
+
+%text-heading--chunky{
+	font-family: $font-std;
+	font-size: $font-size-heading;
+	line-height:1.2;
+	font-variation-settings: 'opsz' 20;
+	font-weight: 650;
+	@include light-mode-wrapper{
+		font-weight: 750;
 	}
 }
 
@@ -343,12 +359,6 @@ $font-blocky: "degular-variable", sans-serif;
 		@include light-mode-wrapper{
 			font-weight: 600;
 		}
-	}
-}
-
-%body-formatting{
-	a{
-		@extend %text-link;
 	}
 }
 

@@ -40,7 +40,7 @@ button{
 	text-decoration: 0;
 	cursor: pointer;
 	&.button{
-		@extend %text-link;
+		@extend %text-link-defaults;
 	}
 }
 
@@ -49,7 +49,7 @@ input, button, label, textarea{
 }
 
 a{
-	@extend %text-link;
+	@extend %text-link-defaults;
 }
 
 a, button, input, textarea, select{
