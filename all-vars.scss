@@ -26,8 +26,6 @@
 	}
 }
 
-
-
 /* Variables ------------------------------------------------- */
 
 $border-radius: 4px;
@@ -43,6 +41,59 @@ $site-width: project.$site-width;
 $site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
 $content-width: project.$content-width;
 $extended-width: project.$extended-width;
+
+
+/* Breakpoints ------------------------------------------------- */
+
+$breakpoints: (
+    mobile: 359px,
+    mobile-land: 512px,
+    tablet: 641px,
+    desktop: 800px,
+    desktop-mini: 880px,
+    desktop-med: 1025px,
+    mobile-nav: 1090px,
+    desktop-wide: 1200px,
+    desktop-wider: 1340px,
+    desktop-xl: 1408px,
+	site-width-margins: $site-width-margins,
+	site-width: $site-width
+);
+$breakpoints--h: (
+    letterbox: 900px
+);
+
+// breakpoint mixins
+@mixin break($breakpoint: medium) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		@media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+@mixin break-under($breakpoint: medium) {
+	@if map.has-key($breakpoints, $breakpoint) {
+	  @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
+		  @content;
+	  }
+	}
+}
+
+@mixin break-between($breakpoint-lower, $breakpoint-higher){
+	@media screen and (min-width: map.get($breakpoints, $breakpoint-lower)) and (max-width: map.get($breakpoints, $breakpoint-higher)) {
+		@content;
+	}
+}
+
+// height 
+@mixin break--h($breakpoint) {
+	@if map.has-key($breakpoints--h, $breakpoint) {
+		@media screen and (max-height: map.get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
+			@content;
+		}
+	}
+}
 
 
 
@@ -77,7 +128,7 @@ $font-size-medium: responsiveSize(3.2, 30, 3.2);
 $font-size-std: responsiveSize(1.8, 20, 1.8);
 
 // For body only
-$font-size-body: responsiveSize(1.6, 20, 1.6);
+$font-size-body: responsiveSize(1.6, 10, 1.6);
 
 // For body standouts
 $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
@@ -86,7 +137,7 @@ $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
 $font-size-blocky: responsiveSize(1.6, 8, 1.6);
 
 // For tiny text
-$font-size-tiny: 1.4rem;
+$font-size-tiny: 1.3rem;
 
 // For exceptional reasons
 $font-size-miniscule: 1.25rem;
@@ -103,6 +154,12 @@ $font-blocky: "degular-variable", sans-serif;
 	font-weight: 600;
 	@include light-mode-wrapper{
 		font-weight: 700;
+	}
+}
+
+%loose-text-mobile{
+	@include break-under(tablet){
+		letter-spacing: .03em;
 	}
 }
 
@@ -218,12 +275,13 @@ $font-blocky: "degular-variable", sans-serif;
 %text-body{
 	font-family: $font-body;
 	font-size: $font-size-body;
+	@extend %loose-text-mobile;
 	font-style: normal;
 	line-height: 1.7;
 	font-variation-settings: 'opsz' 6;
 	font-weight: 300;
 	@include light-mode-wrapper{
-		font-weight: 500;
+		font-weight: 400;
 	}
 	strong, b, a{
 		@extend %body-weight-bold;
@@ -332,8 +390,8 @@ $font-blocky: "degular-variable", sans-serif;
 
 %text-tiny{
 	font-size: $font-size-tiny;
-	font-family: $font-std;
-	font-variation-settings: 'opsz' 6;
+	font-family: $font-body;
+	letter-spacing: .03em;
 	font-weight: 300;
 	@include light-mode-wrapper{
 		font-weight: 400;
@@ -360,60 +418,6 @@ $font-blocky: "degular-variable", sans-serif;
 		font-weight: 500;
 		@include light-mode-wrapper{
 			font-weight: 600;
-		}
-	}
-}
-
-
-/* Breakpoints ------------------------------------------------- */
-
-$breakpoints: (
-    mobile: 359px,
-    mobile-land: 512px,
-    tablet: 641px,
-    desktop: 800px,
-    desktop-mini: 880px,
-    desktop-med: 1025px,
-    mobile-nav: 1090px,
-    desktop-wide: 1200px,
-    desktop-wider: 1340px,
-    desktop-xl: 1408px,
-	site-width-margins: $site-width-margins,
-	site-width: $site-width
-);
-$breakpoints--h: (
-    letterbox: 900px
-);
-
-
-// breakpoint mixins
-@mixin break($breakpoint: medium) {
-	@if map.has-key($breakpoints, $breakpoint) {
-		@media screen and (min-width: map.get($breakpoints, $breakpoint)) {
-			@content;
-		}
-	}
-}
-
-@mixin break-under($breakpoint: medium) {
-	@if map.has-key($breakpoints, $breakpoint) {
-	  @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
-		  @content;
-	  }
-	}
-}
-
-@mixin break-between($breakpoint-lower, $breakpoint-higher){
-	@media screen and (min-width: map.get($breakpoints, $breakpoint-lower)) and (max-width: map.get($breakpoints, $breakpoint-higher)) {
-		@content;
-	}
-}
-
-// height 
-@mixin break--h($breakpoint) {
-	@if map.has-key($breakpoints--h, $breakpoint) {
-		@media screen and (max-height: map.get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
-			@content;
 		}
 	}
 }
