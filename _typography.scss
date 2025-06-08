@@ -7,7 +7,7 @@
 	@extend %text-link
 }
 .text-body{
-	@extend %text-body;
+	@extend %text-std;
 }
 .text-intro{
 	@extend %text-intro;
@@ -44,6 +44,12 @@ h2, h3, h4, h5, h6{
 		@extend %text-heading;
 	}
 }
+h4, h5, h6{
+	&:not([class]){
+		font-size: vars.$font-size-heading-small;	
+	}
+}
+
 h2, h3, h4, h5, h6, p, ul, ol{
 	&:not([class]){
 		margin-bottom: vars.$block-spacing--text;
@@ -55,7 +61,7 @@ h2, h3, h4, h5, h6, p, ul, ol{
 p, li{
 	&:not([class]){
 		max-width: vars.$content-width;
-		@extend %text-body;
+		@extend %text-std;
 		width: 100%;
 		max-width: vars.$content-width;
 		@media print{
