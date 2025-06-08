@@ -435,25 +435,17 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %list-item{
-	list-style-type: none;
-	gap: .7em;
-	align-items:baseline;
 	max-width: $content-width;
 	margin-bottom: 0!important;
 	@extend %text-std;
-	padding-left: 1em;
+	padding-left: .5em;
+	left: .5em;
 	position: relative;
 	padding-bottom: .3em;
-	&::before{
-		position: absolute;
-		top: .8em;
-		left: 0;
-		content: '';
-		width: 6px;
-		height: 6px;
-		background-color: var(--color-accent-alt);
-		display: block;
-		transform: rotate(45deg);
-		flex-shrink: 0;
+	&::marker{
+		content: "◆";
+		font-size: 1em;
+		color: var(--color-accent-alt);
+		transform: translate(-1em);
 	}
 }
