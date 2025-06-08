@@ -390,7 +390,7 @@ $font-blocky: "degular-variable", sans-serif;
 
 %text-tiny{
 	font-size: $font-size-tiny;
-	font-family: $font-body;
+	font-family: $font-std;
 	letter-spacing: .03em;
 	font-weight: 300;
 	@include light-mode-wrapper{
