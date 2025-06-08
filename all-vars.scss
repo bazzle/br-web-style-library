@@ -128,7 +128,7 @@ $font-size-medium: responsiveSize(3.2, 30, 3.2);
 $font-size-std: responsiveSize(1.8, 20, 1.8);
 
 // For body only
-$font-size-body: responsiveSize(1.6, 10, 1.6);
+$font-size-body: responsiveSize(1.9, 10, 1.9);
 
 // For body standouts
 $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
@@ -143,7 +143,8 @@ $font-size-tiny: 1.3rem;
 $font-size-miniscule: 1.25rem;
 
 // Fonts
-$font-body: "IvyJournal", sans-serif;
+$font-editorial: "IvyJournal", sans-serif;
+$font-body: "degular-variable", sans-serif;
 $font-std: "degular-variable", sans-serif;
 $font-display: "degular-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
@@ -208,16 +209,39 @@ $font-blocky: "degular-variable", sans-serif;
 	font-size: $font-size-std;
 	font-style: normal;
 	line-height: 1.4;
-	font-variation-settings: 'opsz' 6;
-	font-weight: 450;
+	font-variation-settings: 'opsz' 10;
+	font-weight: 380;
 	@include light-mode-wrapper{
-		font-weight: 600;
+		font-weight: 460;
 	}
 	strong, b{
 		font-weight: 650;
 		@include light-mode-wrapper{
-			font-weight: 800;
+			font-weight: 660;
 		}
+	}
+}
+
+%text-editorial{
+	p, li, a{
+		font-family: $font-editorial;
+		font-size: responsiveSize(1.8, 20, 1.8);
+		font-style: normal;
+		line-height: 1.8;
+		font-variation-settings: 'opsz' 32;
+		font-weight: 300;
+		@include light-mode-wrapper{
+			font-weight: 400;
+			b, strong{
+				font-weight: 600;
+			}
+		}
+		b, strong{
+			font-weight: 600;
+		}
+	}
+	li{
+		@extend %list-item;
 	}
 }
 
@@ -227,6 +251,7 @@ $font-blocky: "degular-variable", sans-serif;
 	text-underline-offset: 0.1em;
 	text-decoration-thickness: .05em;
 	font-style: normal;
+	font-weight: 500;
 	&:hover{
 		text-decoration: none;
 	}
@@ -272,22 +297,6 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-body{
-	font-family: $font-body;
-	font-size: $font-size-body;
-	@extend %loose-text-mobile;
-	font-style: normal;
-	line-height: 1.7;
-	font-variation-settings: 'opsz' 6;
-	font-weight: 300;
-	@include light-mode-wrapper{
-		font-weight: 400;
-	}
-	strong, b, a{
-		@extend %body-weight-bold;
-	}
-}
-
 %text-heading-defaults{
 	color: var(--color-accent);
 	font-family: $font-std;
@@ -298,9 +307,9 @@ $font-blocky: "degular-variable", sans-serif;
 	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
-	font-weight: 400;
+	font-weight: 550;
 	@include light-mode-wrapper{
-		font-weight: 550;
+		font-weight: 600;
 	}
 }
 
@@ -328,10 +337,10 @@ $font-blocky: "degular-variable", sans-serif;
 %text-heading-small{
 	@extend %text-heading-defaults;
 	font-size: $font-size-heading-small;
-	font-variation-settings: 'opsz' 40;
-	font-weight: 400;
+	font-variation-settings: 'opsz' 16;
+	font-weight: 550;
 	@include light-mode-wrapper{
-		font-weight: 570;
+		font-weight: 600;
 	}
 }
 
@@ -365,9 +374,9 @@ $font-blocky: "degular-variable", sans-serif;
 	font-size: $font-size-blocky;
 	letter-spacing: .03em;
 	font-variation-settings: 'opsz' 16;
-	font-weight: 400;
+	font-weight: 420;
 	@include light-mode-wrapper{
-		font-weight: 480;
+		font-weight: 520;
 	}
 	@media print{
 		font-size: 1.7rem;
@@ -391,15 +400,16 @@ $font-blocky: "degular-variable", sans-serif;
 %text-tiny{
 	font-size: $font-size-tiny;
 	font-family: $font-std;
-	letter-spacing: .03em;
-	font-weight: 300;
+	letter-spacing: .02em;
+	font-weight: 400;
+	font-variation-settings: 'opsz' 10;
 	@include light-mode-wrapper{
-		font-weight: 400;
+		font-weight: 500;
 	}
 	strong, b{
-		font-weight: 400;
+		font-weight: 500;
 		@include light-mode-wrapper{
-			font-weight: 500;
+			font-weight: 600;
 		}
 	}
 }
@@ -409,7 +419,7 @@ $font-blocky: "degular-variable", sans-serif;
 	font-size: $font-size-miniscule;
 	font-style: normal;
 	line-height: 1.4;
-	font-variation-settings: 'opsz' 6;
+	font-variation-settings: 'opsz' 10;
 	font-weight: 400;
 	@include light-mode-wrapper{
 		font-weight: 500;
@@ -429,4 +439,20 @@ $font-blocky: "degular-variable", sans-serif;
     height: 2px;
 	background-color: var(--color-ridged-line-shadow);
     border-bottom: 1px solid var(--color-ridged-line-light);
+}
+
+%list-item{
+	max-width: $content-width;
+	margin-bottom: 0!important;
+	@extend %text-std;
+	padding-left: .5em;
+	left: .5em;
+	position: relative;
+	padding-bottom: .3em;
+	&::marker{
+		content: "◆";
+		font-size: 1em;
+		color: var(--color-accent-alt);
+		transform: translate(-1em);
+	}
 }
