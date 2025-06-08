@@ -222,6 +222,23 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
+%text-editorial{
+	p, li, a{
+		font-family: $font-editorial;
+		font-size: responsiveSize(1.8, 20, 1.8);
+		font-style: normal;
+		line-height: 1.8;
+		font-variation-settings: 'opsz' 32;
+		font-weight: 320;
+		@include light-mode-wrapper{
+			font-weight: 550;
+		}
+	}
+	li{
+		@extend %list-item;
+	}
+}
+
 %text-link-defaults{
 	color: var(--color-accent);
 	text-decoration: underline;
@@ -422,9 +439,8 @@ $font-blocky: "degular-variable", sans-serif;
 	gap: .7em;
 	align-items:baseline;
 	display: flex;
-	padding-top: .3em;
-	padding-bottom: .3em;
 	max-width: $content-width;
+	margin-bottom: 0!important;
 	@extend %text-std;
 	&::before{
 		position: relative;
