@@ -416,3 +416,25 @@ $font-blocky: "degular-variable", sans-serif;
 	background-color: var(--color-ridged-line-shadow);
     border-bottom: 1px solid var(--color-ridged-line-light);
 }
+
+%list-item{
+	list-style-type: none;
+	gap: .7em;
+	align-items:baseline;
+	display: flex;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	max-width: $content-width;
+	@extend %text-std;
+	&::before{
+		position: relative;
+		top: -.1em;
+		content: '';
+		width: 6px;
+		height: 6px;
+		background-color: var(--color-accent-alt);
+		display: block;
+		transform: rotate(45deg);
+		flex-shrink: 0;
+	}
+}
