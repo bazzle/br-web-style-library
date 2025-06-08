@@ -229,9 +229,15 @@ $font-blocky: "degular-variable", sans-serif;
 		font-style: normal;
 		line-height: 1.8;
 		font-variation-settings: 'opsz' 32;
-		font-weight: 320;
+		font-weight: 300;
 		@include light-mode-wrapper{
-			font-weight: 550;
+			font-weight: 400;
+			b, strong{
+				font-weight: 600;
+			}
+		}
+		b, strong{
+			font-weight: 600;
 		}
 	}
 	li{
@@ -245,6 +251,7 @@ $font-blocky: "degular-variable", sans-serif;
 	text-underline-offset: 0.1em;
 	text-decoration-thickness: .05em;
 	font-style: normal;
+	font-weight: 500;
 	&:hover{
 		text-decoration: none;
 	}
