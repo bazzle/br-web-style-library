@@ -125,10 +125,10 @@ $font-size-heading-small: responsiveSize(2.2, 5, 2.2);
 $font-size-medium: responsiveSize(3.2, 30, 3.2);
 
 // Default font size
-$font-size-std: responsiveSize(1.8, 20, 1.8);
+$font-size-std: responsiveSize(2, 15, 2);
 
 // For body only
-$font-size-body: responsiveSize(1.9, 10, 1.9);
+$font-size-body: responsiveSize(2, 15, 2);
 
 // For body standouts
 $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
@@ -143,20 +143,13 @@ $font-size-tiny: 1.3rem;
 $font-size-miniscule: 1.25rem;
 
 // Fonts
-$font-editorial: "IvyJournal", sans-serif;
+$font-editorial: "degular-variable", sans-serif;
 $font-body: "degular-variable", sans-serif;
 $font-std: "degular-variable", sans-serif;
 $font-display: "degular-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 
 // Type mixins
-
-%body-weight-bold{
-	font-weight: 600;
-	@include light-mode-wrapper{
-		font-weight: 700;
-	}
-}
 
 %loose-text-mobile{
 	@include break-under(tablet){
@@ -204,13 +197,18 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-std{
+%text-std-defaults{
+	font-feature-settings:"kern" on,"liga" on;
+	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
-	font-style: normal;
-	line-height: 1.4;
-	font-variation-settings: 'opsz' 10;
+}
+
+%text-std{
+	@extend %text-std-defaults;
+	font-variation-settings: 'opsz' 80;
 	font-weight: 380;
+	letter-spacing: 0.05em;
 	@include light-mode-wrapper{
 		font-weight: 460;
 	}
@@ -223,21 +221,17 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-editorial{
-	p, li, a{
-		font-family: $font-editorial;
-		font-size: responsiveSize(1.8, 20, 1.8);
-		font-style: normal;
-		line-height: 1.8;
-		font-variation-settings: 'opsz' 32;
-		font-weight: 300;
+	@extend %text-std-defaults;
+	font-variation-settings: 'opsz' 80;
+	font-weight: 380;
+	letter-spacing: 0.05em;
+	@include light-mode-wrapper{
+		font-weight: 460;
+	}
+	strong, b{
+		font-weight: 650;
 		@include light-mode-wrapper{
-			font-weight: 400;
-			b, strong{
-				font-weight: 600;
-			}
-		}
-		b, strong{
-			font-weight: 600;
+			font-weight: 660;
 		}
 	}
 	li{
@@ -264,7 +258,10 @@ $font-blocky: "degular-variable", sans-serif;
 %text-link{
 	font-family: $font-body;
 	@extend %text-link-defaults;
-	@extend %body-weight-bold;
+	font-weight: 600;
+	@include light-mode-wrapper{
+		font-weight: 700;
+	}
 }
 
 %standalone-link{
@@ -291,15 +288,18 @@ $font-blocky: "degular-variable", sans-serif;
 	font-family: $font-std;
 	color: var(--color-foreground);
 	font-style: normal;
-	@extend %body-weight-bold;
+	font-weight: 600;
+	@include light-mode-wrapper{
+		font-weight: 700;
+	}
 	@media print{
 		font-weight: 700;
 	}
 }
 
 %text-heading-defaults{
+	@extend %text-std-defaults;
 	color: var(--color-accent);
-	font-family: $font-std;
 	line-height:1.2;
 }
 
@@ -307,9 +307,9 @@ $font-blocky: "degular-variable", sans-serif;
 	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
-	font-weight: 550;
+	font-weight: 660;
 	@include light-mode-wrapper{
-		font-weight: 600;
+		font-weight: 730;
 	}
 }
 
@@ -368,22 +368,6 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-blocky{
-	font-family: $font-blocky;
-	font-style: normal;
-	text-transform: uppercase;
-	font-size: $font-size-blocky;
-	letter-spacing: .03em;
-	font-variation-settings: 'opsz' 16;
-	font-weight: 420;
-	@include light-mode-wrapper{
-		font-weight: 520;
-	}
-	@media print{
-		font-size: 1.7rem;
-	}
-}
-
-%text-blocky-bold{
 	font-family: $font-blocky;
 	font-style: normal;
 	text-transform: uppercase;

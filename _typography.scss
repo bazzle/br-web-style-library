@@ -28,6 +28,17 @@
 	@extend %text-miniscule;
 }
 
+body{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: var(--color-bg-off-solid);
+	color: var(--color-foreground);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@extend %text-std-defaults;
+}
+
 p.outset-text{
 	line-height: 1.4;
 	color: var(--color-accent-alt);
@@ -63,7 +74,6 @@ p, li{
 		max-width: vars.$content-width;
 		@extend %text-std;
 		width: 100%;
-		max-width: vars.$content-width;
 		@media print{
 			max-width: 100rem;
 		}

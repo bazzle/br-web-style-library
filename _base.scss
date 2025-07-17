@@ -8,17 +8,6 @@ html{
 	}
 }
 
-body{
-	position: relative;
-	padding: 0;
-	margin: 0;
-	background-color: var(--color-bg-off-solid);
-	color: var(--color-foreground);
-	@extend %text-std;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 ::selection{
 	background-color: var(--color-accent);
 	color: var(--color-bg);
