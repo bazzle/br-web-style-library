@@ -116,7 +116,7 @@ $font-size-display-small: responsiveSize(4, 35, 4);
 $font-size-heading: responsiveSize(2.8, 5, 2.8);
 
 // For larger headings
-$font-size-heading-large: responsiveSize(3.4, 5, 3.4);
+$font-size-heading-large: responsiveSize(3.8, 10, 3.8);
 
 // For small headings
 $font-size-heading-small: responsiveSize(2.2, 5, 2.2);
@@ -137,7 +137,7 @@ $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
 $font-size-blocky: responsiveSize(1.6, 8, 1.6);
 
 // For tiny text
-$font-size-tiny: 1.3rem;
+$font-size-tiny: 1.4rem;
 
 // For exceptional reasons
 $font-size-miniscule: 1.25rem;
@@ -221,17 +221,19 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-editorial{
-	@extend %text-std-defaults;
-	font-variation-settings: 'opsz' 80;
-	font-weight: 380;
-	letter-spacing: 0.05em;
-	@include light-mode-wrapper{
-		font-weight: 460;
-	}
-	strong, b{
-		font-weight: 650;
+	p, li{
+		@extend %text-std-defaults;
+		font-variation-settings: 'opsz' 80;
+		font-weight: 380;
+		letter-spacing: 0.05em;
 		@include light-mode-wrapper{
-			font-weight: 660;
+			font-weight: 460;
+		}
+		strong, b{
+			font-weight: 650;
+			@include light-mode-wrapper{
+				font-weight: 660;
+			}
 		}
 	}
 	li{
@@ -300,10 +302,20 @@ $font-blocky: "degular-variable", sans-serif;
 %text-heading-defaults{
 	@extend %text-std-defaults;
 	color: var(--color-accent);
-	line-height:1.2;
+	line-height:1.1;
 }
 
 %text-heading{
+	@extend %text-heading-defaults;
+	font-size: $font-size-heading;
+	font-variation-settings: 'opsz' 20;
+	font-weight: 550;
+	@include light-mode-wrapper{
+		font-weight: 600;
+	}
+}
+
+%text-heading--chunky{
 	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
@@ -313,17 +325,17 @@ $font-blocky: "degular-variable", sans-serif;
 	}
 }
 
-%text-heading--chunky{
+%text-heading--large{
 	@extend %text-heading-defaults;
-	font-size: $font-size-heading;
+	font-size: $font-size-heading-large;
 	font-variation-settings: 'opsz' 20;
-	font-weight: 650;
+	font-weight: 660;
 	@include light-mode-wrapper{
-		font-weight: 750;
+		font-weight: 730;
 	}
 }
 
-%text-heading-thin{
+%text-heading--thin{
 	@extend %text-heading-defaults;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 28;
@@ -387,6 +399,7 @@ $font-blocky: "degular-variable", sans-serif;
 	letter-spacing: .02em;
 	font-weight: 400;
 	font-variation-settings: 'opsz' 10;
+	line-height: 1.2;
 	@include light-mode-wrapper{
 		font-weight: 500;
 	}
@@ -401,7 +414,6 @@ $font-blocky: "degular-variable", sans-serif;
 %text-miniscule{
 	font-family: $font-std;
 	font-size: $font-size-miniscule;
-	font-style: normal;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' 10;
 	font-weight: 400;
@@ -433,6 +445,9 @@ $font-blocky: "degular-variable", sans-serif;
 	left: .5em;
 	position: relative;
 	padding-bottom: .3em;
+	p{
+		margin-bottom: 0;
+	}
 	&::marker{
 		content: "◆";
 		font-size: 1em;

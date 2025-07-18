@@ -52,12 +52,12 @@ p.outset-text{
 
 h2, h3, h4, h5, h6{
 	&:not([class]){
-		@extend %text-heading;
+		@extend %text-heading--chunky;
 	}
 }
 h4, h5, h6{
 	&:not([class]){
-		font-size: vars.$font-size-heading-small;	
+		font-size: vars.$font-size-heading-small;
 	}
 }
 
@@ -86,4 +86,9 @@ li{
 			margin-bottom: 0;
 		}
 	}
+}
+img + em{
+	padding-top: 1em;
+	@extend %text-tiny;
+	display: block;
 }
