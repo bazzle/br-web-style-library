@@ -9,6 +9,7 @@
 	--color-bg-off-solid: #151515;
 	--color-bg-solid: #000000;
 	--color-feint-line: rgb(255, 255, 255, .1);
+	--color-feint-line-2: rgb(255, 255, 255, .5);
 	--color-focus: #9AF3FF;
 	--color-accent-alt-immutable: #FFAAAA;
 	--color-accent-immutable: #9AF3FF;
@@ -24,13 +25,14 @@ body{
 	&.light-mode{
 		--color-foreground: #2c2c2c;
 		--color-foreground-alt: #4b4b4b;
-		--color-accent: #386a71;
-		--color-accent-alt: #af4a4a;
+		--color-accent: #437f87;
+		--color-accent-alt: #b95959;
 		--color-bg: #e3e3e3;
 		--color-bg-alt: #d1d1d1;
 		--color-bg-off-solid: #fafafa;
 		--color-bg-solid: #ffffff;
-		--color-feint-line: rgb(255, 255, 255, 1);
+		--color-feint-line: rgb(44, 44, 44, 1);
+		--color-feint-line-2: rgb(44, 44, 44, .5);
 		--color-focus: #386a71;
 		--color-ridged-line-shadow: rgba(0, 0, 0, 0.05);
 		--color-ridged-line-light: rgb(255, 255, 255);
