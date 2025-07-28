@@ -52,6 +52,9 @@
 
 
 // SVG fills
+.fill-currentColor{
+	fill: currentColor;
+}
 .fill-accent{
 	fill: var(--color-accent);
 }
