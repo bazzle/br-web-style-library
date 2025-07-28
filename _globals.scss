@@ -12,11 +12,11 @@
 	--color-bg-solid: #000000;
 	--color-feint-line: rgb(255, 255, 255, .1);
 	--color-feint-line-2: rgb(255, 255, 255, .5);
-	--color-focus: #9AF3FF;
-	--color-accent-alt-immutable: #FFAAAA;
-	--color-accent-immutable: #9AF3FF;
+	--color-focus: rgb(154, 243, 255);
+	--color-accent-alt-immutable: rgb(255, 170, 170);
+	--color-accent-immutable: rgb(154, 243, 255);
 	--color-accent-faded: #9af3ff76;
-	--color-accent-alt-faded: #ffaaaa63;
+	--color-accent-alt-faded: rgba(255, 170, 170, 0.388);
 	--color-ridged-line-shadow: rgba(0, 0, 0, 0.7);
 	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
 	--color-ridged-line-light-accent: rgba(154, 243, 255, 0.16);
@@ -31,25 +31,25 @@ body{
 		--color-accent-alt: rgb(185, 89, 89);
 		--color-bg: #e3e3e3;
 		--color-bg-alt: rgb(209, 209, 209);
-		--color-bg-alt-70: rgba(209, 209, 209, .6);
+		--color-bg-alt-70: rgba(209, 209, 209, .7);
 		--color-bg-off-solid: #fafafa;
 		--color-bg-solid: #ffffff;
 		--color-feint-line: rgb(44, 44, 44, 1);
 		--color-feint-line-2: rgb(44, 44, 44, .5);
-		--color-focus: #386a71;
+		--color-focus: rgb(56, 106, 113);
 		--color-ridged-line-shadow: rgba(0, 0, 0, 0.05);
 		--color-ridged-line-light: rgb(255, 255, 255);
 	}
 	@media print{
 		--color-foreground: #2c2c2c;
 		--color-foreground-alt: #4b4b4b;
-		--color-accent: #386a71;
-		--color-accent-alt: #af4a4a;
+		--color-accent: rgb(56, 106, 113);
+		--color-accent-alt: rgb(175, 74, 74);
 		--color-bg: #e3e3e3;
 		--color-bg-alt: #d1d1d1;
 		--color-bg-off-solid: #fafafa;
 		--color-bg-solid: #ffffff;
 		--color-feint-line: rgb(255, 255, 255, 1);
-		--color-focus: #386a71;
+		--color-focus: rgb(56, 106, 113);
 	}
 }
