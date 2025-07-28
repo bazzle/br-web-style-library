@@ -1,9 +1,9 @@
 :root{
 	--color-foreground: #ffffff;
-	--color-accent: #9AF3FF;
+	--color-accent: rgb(154, 243, 255);
 	--color--accent-50: rgb(154, 243, 255, .5);
 	--color--accent-20: rgb(154, 243, 255, .2);
-	--color-accent-alt: #FFAAAA;
+	--color-accent-alt: rgb(255, 170, 170);
 	--color-accent-alt-50: rgb(255, 170, 170, .5);
 	--color-bg: #202020;
 	--color-bg-alt: rgb(22, 22, 22);
@@ -27,8 +27,8 @@ body{
 	&.light-mode{
 		--color-foreground: #2c2c2c;
 		--color-foreground-alt: #4b4b4b;
-		--color-accent: #437f87;
-		--color-accent-alt: #b95959;
+		--color-accent: rgb(67, 127, 135);
+		--color-accent-alt: rgb(185, 89, 89);
 		--color-bg: #e3e3e3;
 		--color-bg-alt: rgb(209, 209, 209);
 		--color-bg-alt-70: rgba(209, 209, 209, .6);
