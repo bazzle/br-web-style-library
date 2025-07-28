@@ -442,7 +442,13 @@ $font-blocky: "degular-variable", sans-serif;
 	margin-bottom: 0!important;
 	@extend %text-std;
 	padding-left: .5em;
-	left: .5em;
+	left: .8em;
+	width: calc(100% - 1.3em);
+	@include break(tablet){
+		left: 0;
+		padding-left: 0;
+		width: 100%;
+	}
 	position: relative;
 	padding-bottom: .3em;
 	p{
