@@ -438,25 +438,25 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %list-item{
-	max-width: $content-width;
-	margin-bottom: 0!important;
-	@extend %text-std;
-	padding-left: .5em;
-	left: .8em;
-	width: calc(100% - 1.3em);
+    max-width: $content-width;
+    margin-bottom: 0 !important;
+    padding-left: 0;
+    width: calc(100% - 1.3em);
+    position: relative;
+    padding-bottom: 0.3em;
+    list-style: none;
+	display: flex;
+	gap: .5em;
+	&::before{
+		content: "◆";
+		font-size: 1em;
+		color: var(--color-accent-alt);
+	}
 	@include break(tablet){
 		left: -0.5em;
 		width: 100%;
 	}
-	position: relative;
-	padding-bottom: .3em;
 	p{
 		margin-bottom: 0;
-	}
-	&::marker{
-		content: "◆";
-		font-size: 1em;
-		color: var(--color-accent-alt);
-		transform: translate(-1em);
 	}
 }
