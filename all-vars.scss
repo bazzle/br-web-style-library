@@ -161,7 +161,7 @@ $font-blocky: "degular-variable", sans-serif;
 	font-family: $font-display;
 	font-size: $font-size-display;
 	font-style: normal;
-	line-height: 1;
+	line-height: .8;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
 	@include light-mode-wrapper{
