@@ -53,6 +53,7 @@ p.outset-text{
 h2, h3, h4, h5, h6{
 	&:not([class]){
 		@extend %text-heading--chunky;
+		color: var(--color-accent-alt);
 	}
 }
 h4, h5, h6{

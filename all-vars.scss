@@ -301,7 +301,6 @@ $font-blocky: "degular-variable", sans-serif;
 
 %text-heading-defaults{
 	@extend %text-std-defaults;
-	color: var(--color-accent);
 	line-height:1.1;
 }
 
