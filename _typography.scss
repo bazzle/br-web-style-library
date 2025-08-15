@@ -74,7 +74,6 @@ p, li{
 	&:not([class]){
 		max-width: vars.$content-width;
 		@extend %text-std;
-		width: 100%;
 		@media print{
 			max-width: 100rem;
 		}
