@@ -1,6 +1,6 @@
 @use "sass:map";
 @use '../project-styles/project-specific' as project;
-@import url("https://use.typekit.net/xrw6pbn.css");
+@import url("https://use.typekit.net/sqp3jyo.css");
 
 /* Useful helpers -------------------------------------- */
 
@@ -206,9 +206,8 @@ $font-blocky: "degular-variable", sans-serif;
 
 %text-std{
 	@extend %text-std-defaults;
-	font-variation-settings: 'opsz' 80;
+	font-variation-settings: 'opsz' 20;
 	font-weight: 380;
-	letter-spacing: 0.05em;
 	@include light-mode-wrapper{
 		font-weight: 460;
 	}
@@ -218,26 +217,9 @@ $font-blocky: "degular-variable", sans-serif;
 			font-weight: 660;
 		}
 	}
-}
-
-%text-editorial{
-	p, li{
-		@extend %text-std-defaults;
-		font-variation-settings: 'opsz' 80;
-		font-weight: 380;
-		letter-spacing: 0.05em;
-		@include light-mode-wrapper{
-			font-weight: 460;
-		}
-		strong, b{
-			font-weight: 650;
-			@include light-mode-wrapper{
-				font-weight: 660;
-			}
-		}
-	}
-	li{
-		@extend %list-item;
+	em, i{
+		font-style: unset;
+		font-variation-settings: 'opsz' 20, "ital" 1;
 	}
 }
 
