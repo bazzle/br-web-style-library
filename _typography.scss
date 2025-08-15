@@ -88,13 +88,15 @@ li{
 	}
 }
 blockquote{
-	border-left: 1px solid var(--color-accent-alt);
-	padding-left: 1em;
-	padding-top: 0;
-	padding-bottom: 0;
-	position: relative;
-	@include vars.break(tablet){
-		left: -1em;
+	&:not([class]){
+		border-left: 1px solid var(--color-accent-alt);
+		padding-left: 1em;
+		padding-top: 0;
+		padding-bottom: 0;
+		position: relative;
+		@include vars.break(tablet){
+			left: -1em;
+		}
 	}
 }
 img + em{
