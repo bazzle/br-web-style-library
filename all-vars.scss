@@ -199,7 +199,7 @@ $font-blocky: "degular-variable", sans-serif;
 
 %text-std-defaults{
 	font-feature-settings:"kern" on,"liga" on;
-	font-variation-settings: 'opsz' 20;
+	font-variation-settings: 'opsz' 10;
 	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
@@ -431,7 +431,6 @@ $font-blocky: "degular-variable", sans-serif;
     list-style: none;
 	position: relative;
 	@include break-under(tablet){
-		width: calc(100% - 1em);
 		padding-left: 1em;
 	}
 	&::before{
