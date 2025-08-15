@@ -62,7 +62,7 @@ h4, h5, h6{
 	}
 }
 
-h2, h3, h4, h5, h6, p, ul, ol{
+h2, h3, h4, h5, h6, p, ul, ol, blockquote{
 	&:not([class]){
 		margin-bottom: vars.$block-spacing--text;
 	}
@@ -70,7 +70,7 @@ h2, h3, h4, h5, h6, p, ul, ol{
 		margin-bottom: 0!important;
 	}
 }
-p, li{
+p, li, blockquote{
 	&:not([class]){
 		max-width: vars.$content-width;
 		@extend %text-std;
