@@ -56,7 +56,7 @@ h2, h3, h4, h5, h6{
 		color: var(--color-accent-alt);
 	}
 }
-h4, h5, h6{
+h3, h4, h5, h6{
 	&:not([class]){
 		font-size: vars.$font-size-heading-small;
 	}
