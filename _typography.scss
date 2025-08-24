@@ -82,6 +82,7 @@ p, li, blockquote{
 li{
 	&:not([class]){
 		margin-bottom: .6rem;
+		list-style-type: none;
 		&:last-of-type{
 			margin-bottom: 0;
 		}
