@@ -436,9 +436,10 @@ $font-blocky: "degular-variable", sans-serif;
 	&::before{
 		position: absolute;
 		content: "◆";
-		font-size: 1em;
+		font-size: .8em;
 		color: var(--color-accent-alt);
-		left: 0;
+		left: -.2em;
+		top: .3em;
 		@include break(tablet){
 			left: -1em;
 		}
