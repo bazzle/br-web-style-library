@@ -203,9 +203,9 @@ $font-blocky: "degular-variable", sans-serif;
 	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
-	font-weight: 380;
+	font-weight: 300;
 	@include light-mode-wrapper{
-		font-weight: 460;
+		font-weight: 440;
 	}
 	strong, b{
 		font-weight: 650;
