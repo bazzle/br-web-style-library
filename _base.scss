@@ -13,8 +13,9 @@ html{
 	color: var(--color-bg);
 }
 
-main{
+.main{
 	overflow-x: hidden;
+	min-height: 100vh;
 }
 
 hr{
