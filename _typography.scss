@@ -69,6 +69,9 @@ h2, h3, h4, h5, h6, p, ul, ol, blockquote, img{
 	> *:last-child {
 		margin-bottom: 0!important;
 	}
+	@include vars.break-under(tablet){
+		overflow-wrap: break-word;
+	}
 }
 p, li, blockquote{
 	&:not([class]){
@@ -103,4 +106,13 @@ img + em{
 	padding-top: 1em;
 	@extend %text-tiny;
 	display: block;
+}
+pre {
+	white-space: pre-wrap;
+	word-break: break-word;
+	overflow-x: auto;
+	font-family: monospace;
+	line-height: 1.4;
+	padding: 1em 1.2em;
+	background-color: var(--color-bg-solid);
 }
