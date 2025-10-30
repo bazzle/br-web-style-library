@@ -223,8 +223,15 @@ $font-blocky: "degular-variable", sans-serif;
 }
 
 %text-editorial{
-	li{
-		@extend %list-item;
+	ul{
+		li{
+			@extend %ul-list-item;
+		}
+	}
+	ol{
+		li{
+			@extend %ol-list-item;
+		}
 	}
 }
 
@@ -423,7 +430,8 @@ $font-blocky: "degular-variable", sans-serif;
     border-bottom: 1px solid var(--color-ridged-line-light);
 }
 
-%list-item{
+%ul-list-item{
+	list-style-type: none;
     max-width: $content-width;
     margin-bottom: 0 !important;
     padding-bottom: 0.3em;
@@ -442,6 +450,20 @@ $font-blocky: "degular-variable", sans-serif;
 		@include break(tablet){
 			left: -1em;
 		}
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+
+%ol-list-item{
+    max-width: $content-width;
+    margin-bottom: 0 !important;
+    padding-bottom: 0.3em;
+	position: relative;
+	@include break-under(tablet){
+		left: 1em;
+		width: calc(100% - 1em);
 	}
 	p{
 		margin-bottom: 0;
