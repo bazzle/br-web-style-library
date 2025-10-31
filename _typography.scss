@@ -111,8 +111,14 @@ pre {
 	white-space: pre-wrap;
 	word-break: break-word;
 	overflow-x: auto;
-	font-family: monospace;
-	line-height: 1.4;
+	max-width: unset;
 	padding: 1em 1.2em;
 	background-color: var(--color-bg-solid);
+	font-family: vars.$font-mono;
+}
+
+code{
+	font-family: vars.$font-mono!important;
+	background-color: var(--color-bg-solid);
+	font-size: .8em;
 }
