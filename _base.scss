@@ -2,7 +2,7 @@
 
 html{
 	font-size: 10px;
-	scroll-behavior: smooth;
+	position: relative;
 	@media print{
 		font-size: 7px;
 	}
