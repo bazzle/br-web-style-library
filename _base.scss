@@ -3,6 +3,7 @@
 html{
 	font-size: 10px;
 	position: relative;
+	scroll-behavior: smooth;
 	@media print{
 		font-size: 7px;
 	}
