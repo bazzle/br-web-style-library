@@ -45,7 +45,7 @@ a{
 
 a, button, input, textarea, select{
 	&:focus-visible{
-		outline: 2px solid var(--color-focus);
+		outline: vars.$outline-focus;
 		outline-offset: .3em;
 		text-decoration: none;
 	}
