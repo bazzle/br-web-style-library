@@ -389,6 +389,22 @@ $font-mono: "degular-mono", sans-serif;
 	}
 }
 
+%text-blocky-tiny{
+	font-family: $font-blocky;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: $font-size-tiny;
+	letter-spacing: .03em;
+	font-weight: 550;
+	font-variation-settings: 'opsz' 16;
+	@include light-mode-wrapper{
+		font-weight: 650;
+		letter-spacing: .06em;
+	}
+}
+
+
+
 %text-tiny{
 	font-size: $font-size-tiny;
 	font-family: $font-std;
