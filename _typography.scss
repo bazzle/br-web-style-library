@@ -1,31 +1,31 @@
 @use "all-vars" as vars;
 
 .text-std{
-	@extend %text-std;
+	@include vars.text-std;
 }
 .text-link{
-	@extend %text-link
+	@include vars.text-link;
 }
 .text-body{
-	@extend %text-std;
+	@include vars.text-std;
 }
 .text-intro{
-	@extend %text-intro;
+	@include vars.text-intro;
 }
 .text-medium{
-	@extend %text-medium;
+	@include vars.text-medium;
 }
 .text-heading{
-	@extend %text-heading;
+	@include vars.text-heading;
 }
 .text-display{
-	@extend %text-display;
+	@include vars.text-display;
 }
 .text-blocky{
-	@extend %text-blocky;
+	@include vars.text-blocky;
 }
 .text-miniscule{
-	@extend %text-miniscule;
+	@include vars.text-miniscule;
 }
 
 body{
@@ -36,7 +36,7 @@ body{
 	color: var(--color-foreground);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	@extend %text-std-defaults;
+	@include vars.text-std-defaults;
 }
 
 p.outset-text{
@@ -52,7 +52,7 @@ p.outset-text{
 
 h2, h3, h4, h5, h6{
 	&:not([class]){
-		@extend %text-heading--chunky;
+		@include vars.text-heading--chunky;
 		color: var(--color-accent-alt);
 	}
 }
@@ -76,7 +76,7 @@ h2, h3, h4, h5, h6, p, ul, ol, blockquote, img{
 p, li, blockquote{
 	&:not([class]){
 		max-width: vars.$content-width;
-		@extend %text-std;
+		@include vars.text-std;
 		@media print{
 			max-width: 100rem;
 		}
@@ -104,7 +104,7 @@ blockquote{
 }
 img + em{
 	padding-top: 1em;
-	@extend %text-tiny;
+	@include vars.text-tiny;
 	display: block;
 }
 pre {
