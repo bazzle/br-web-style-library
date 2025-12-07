@@ -99,7 +99,7 @@ $breakpoints--h: (
 
 /* Typography ------------------------------------------------- */
 
-// largest size, percentage reduction to get smallest size, responsive size
+// largest size / percentage reduction to get smallest size / responsive size
 @function responsiveSize($initial, $pcreduction, $vw) {
 	$min: calc(#{$initial}rem * (#{100 - $pcreduction} / 100));
 	$max: #{$initial}rem;
