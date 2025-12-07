@@ -225,6 +225,9 @@ $font-mono: "degular-mono", sans-serif;
 }
 
 @mixin text-editorial {
+	:is(p, ul, ol, li, blockquote) {
+		font-family: $font-editorial;
+	}
 	ul{
 		li{
 			@include ul-list-item;
