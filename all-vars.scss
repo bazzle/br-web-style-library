@@ -128,7 +128,7 @@ $font-size-medium: responsiveSize(3.2, 30, 3.2);
 $font-size-std: responsiveSize(2, 15, 2);
 
 // For body only
-$font-size-body: responsiveSize(2, 15, 2);
+$font-size-body: responsiveSize(2.1, 15, 2.1);
 
 // For body standouts
 $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
@@ -227,6 +227,7 @@ $font-mono: "degular-mono", sans-serif;
 @mixin text-editorial {
 	:is(p, ul, ol, li, blockquote) {
 		font-family: $font-editorial;
+		line-height: 1.6;
 	}
 	ul{
 		li{
@@ -475,6 +476,9 @@ $font-mono: "degular-mono", sans-serif;
 	p{
 		margin-bottom: 0;
 	}
+	&::marker{
+		color: var(--color-accent-alt);
+	}
 }
 
 @mixin ol-list-item {
@@ -488,5 +492,8 @@ $font-mono: "degular-mono", sans-serif;
 	}
 	p{
 		margin-bottom: 0;
+	}
+	&::marker{
+		color: var(--color-accent-alt);
 	}
 }
