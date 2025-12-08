@@ -150,6 +150,10 @@ $font-display: "degular-variable", sans-serif;
 $font-blocky: "degular-variable", sans-serif;
 $font-mono: "degular-mono", sans-serif;
 
+// misc
+
+$opsz-regular: 10;
+
 // Type mixins
 
 @mixin loose-text-mobile {
@@ -200,7 +204,7 @@ $font-mono: "degular-mono", sans-serif;
 
 @mixin text-std-defaults {
 	font-feature-settings:"kern" on,"liga" on;
-	font-variation-settings: 'opsz' 10;
+	font-variation-settings: 'opsz' $opsz-regular;
 	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
@@ -216,7 +220,7 @@ $font-mono: "degular-mono", sans-serif;
 	}
 	em, i{
 		font-style: unset;
-		font-variation-settings: 'opsz' 20, "ital" 1;
+		font-variation-settings: 'opsz' $opsz-regular, "ital" 1;
 	}
 }
 
@@ -413,7 +417,7 @@ $font-mono: "degular-mono", sans-serif;
 	font-family: $font-std;
 	letter-spacing: .02em;
 	font-weight: 400;
-	font-variation-settings: 'opsz' 10;
+	font-variation-settings: 'opsz' $opsz-regular;
 	line-height: 1.2;
 	@include light-mode-wrapper{
 		font-weight: 500;
@@ -430,7 +434,7 @@ $font-mono: "degular-mono", sans-serif;
 	font-family: $font-std;
 	font-size: $font-size-miniscule;
 	line-height: 1.4;
-	font-variation-settings: 'opsz' 10;
+	font-variation-settings: 'opsz' $opsz-regular;
 	font-weight: 400;
 	@include light-mode-wrapper{
 		font-weight: 500;
