@@ -125,10 +125,7 @@ $font-size-heading-small: responsiveSize(2.2, 5, 2.2);
 $font-size-medium: responsiveSize(3.2, 30, 3.2);
 
 // Default font size
-$font-size-std: responsiveSize(2, 15, 2);
-
-// For body only
-$font-size-body: responsiveSize(2.1, 15, 2.1);
+$font-size-std: responsiveSize(1.8, 15, 1.8);
 
 // For body standouts
 $font-size-body-intro: responsiveSize(2.6, 5, 2.6);
@@ -208,7 +205,7 @@ $opsz-regular: 10;
 	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
-	font-weight: 300;
+	font-weight: 320;
 	@include light-mode-wrapper{
 		font-weight: 440;
 	}
