@@ -90,15 +90,13 @@ main{
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: vars.$column-gap;
 	@include vars.break(tablet){
 		flex-wrap: nowrap;
+		gap: 2vw;
 	}
-	figure{
+	> figure, > img{
 		min-width: 0;
-		> svg, > img{
-			max-height: 550px;
-		}
 	}
 	&.extended{
 		@include vars.break(tablet){
