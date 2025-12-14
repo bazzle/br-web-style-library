@@ -109,3 +109,30 @@ main{
 		}
 	}
 }
+
+@mixin articleImagesDefaults{
+	display: grid;
+	gap: 2vw;
+	grid-template-rows: auto;
+}
+
+.article-images{
+	&--2{
+		display: flex;
+		gap: 2vw;
+		justify-content: center;
+	}
+	&--4{
+		@include articleImagesDefaults;
+		grid-template-columns: 1fr 1fr;
+		@include vars.break(tablet){
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			width: 90vw;
+			height: auto;
+			max-width: 1200px;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+}
