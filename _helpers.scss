@@ -152,10 +152,8 @@
 .align-center{
 	display: flex;
     align-items: center;
-    gap: .3em;
-	svg{
-		width: 10px;
-	}
+    gap: vars.$column-gap;
+	justify-content: space-between;
 }
 
 .rotate180{

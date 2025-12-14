@@ -83,3 +83,31 @@ main{
 		flex: 1;
 	}
 }
+
+.article-images{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+	@include vars.break(tablet){
+		flex-wrap: nowrap;
+	}
+	figure{
+		min-width: 0;
+		> svg, > img{
+			max-height: 550px;
+		}
+	}
+	&.extended{
+		@include vars.break(tablet){
+			width: 90vw;
+			height: auto;
+			max-width: 1200px;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+}
