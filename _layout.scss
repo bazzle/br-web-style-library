@@ -111,20 +111,18 @@ main{
 }
 
 @mixin articleImagesDefaults{
-	display: grid;
+	display: flex;
 	gap: 2vw;
-	grid-template-rows: auto;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .article-images{
 	&--2{
-		display: flex;
-		gap: 2vw;
-		justify-content: center;
+		@include articleImagesDefaults;
 	}
 	&--4{
 		@include articleImagesDefaults;
-		grid-template-columns: 1fr 1fr;
 		@include vars.break(tablet){
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			width: 90vw;
