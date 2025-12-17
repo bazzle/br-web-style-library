@@ -84,32 +84,6 @@ main{
 	}
 }
 
-.article-images{
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: vars.$column-gap;
-	@include vars.break(tablet){
-		flex-wrap: nowrap;
-		gap: 2vw;
-	}
-	> figure, > img{
-		min-width: 0;
-	}
-	&.extended{
-		@include vars.break(tablet){
-			width: 90vw;
-			height: auto;
-			max-width: 1200px;
-			position: relative;
-			left: 50%;
-			transform: translate(-50%);
-		}
-	}
-}
-
 @mixin articleImagesDefaults{
 	display: flex;
 	gap: 2vw;
@@ -125,6 +99,16 @@ main{
 		@include articleImagesDefaults;
 		@include vars.break(tablet){
 			grid-template-columns: 1fr 1fr 1fr 1fr;
+			width: 90vw;
+			height: auto;
+			max-width: 1200px;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+	&.extended{
+		@include vars.break(tablet){
 			width: 90vw;
 			height: auto;
 			max-width: 1200px;
