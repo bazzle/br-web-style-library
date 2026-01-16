@@ -65,3 +65,35 @@ textarea {
 a{
 	min-width: unset;
 }
+
+
+// Scrollbar styling
+
+/* width */
+::-webkit-scrollbar {
+  height: 12px; /* horizontal */
+  width: 12px;  /* vertical */
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: #111; /* dark mode track */
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 6px;
+  border: 3px solid #111; /* creates padding effect */
+}
+
+/* hover state */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+// Firefox
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #111;
+}
