@@ -159,3 +159,18 @@
 .rotate180{
 	transform: rotate(180deg);
 }
+
+// use with grab-scroll.js
+.scroll{
+	overflow-x: scroll;
+	overflow-x: auto;
+	cursor: grab;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
+	user-select: none;
+	-webkit-user-select: none;
+	&:active {
+		cursor: grabbing;
+	}
+}
