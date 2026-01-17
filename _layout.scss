@@ -107,31 +107,7 @@ main{
 			transform: translate(-50%);
 		}
 	}
-	&--unlimited{
-		width: 100vw;
-		height: auto;
-		position: relative;
-		left: 50%;
-		transform: translate(-50%);
-		overflow-x: scroll;
-		overflow-x: auto;
-		cursor: grab;
-		scroll-behavior: smooth;              /* optional */
-		-webkit-overflow-scrolling: touch;    /* iOS momentum */
-		scroll-snap-type: x mandatory;
-		&:active {
-			cursor: grabbing;
-		}
-		.inner{
-			@include articleImagesDefaults;
-			max-width: unset;
-			width: auto;
-		}
-		figure{
-			max-width: 260px;
-			flex-shrink: 0;
-		}
-	}
+	
 	&.extended{
 		@include vars.break(tablet){
 			width: 90vw;
