@@ -453,49 +453,34 @@ $opsz-regular: 10;
     border-bottom: 1px solid var(--color-ridged-line-light);
 }
 
-@mixin ul-list-item {
-	list-style-type: none;
-    max-width: $content-width;
-    margin-bottom: 0 !important;
-    padding-bottom: 0.3em;
-    list-style: none;
+@mixin listItemDefaults{
+	list-style-position: outside;
+	max-width: $content-width;
+	margin-bottom: 0 !important;
+	padding-bottom: 0.3em;
 	position: relative;
 	@include break-under(tablet){
-		padding-left: 1em;
-	}
-	&::before{
-		position: absolute;
-		content: "◆";
-		font-size: .8em;
-		color: var(--color-accent-alt);
-		left: -.2em;
-		top: .3em;
-		@include break(tablet){
-			left: -1em;
-		}
+		margin-left: $gutter-padding;
+		width: calc(100% - $gutter-padding);
 	}
 	p{
 		margin-bottom: 0;
 	}
 	&::marker{
+		display: block;
+		font-weight: 500;
 		color: var(--color-accent-alt);
+		font-size: .8em;
 	}
 }
 
+@mixin ul-list-item {
+	@include listItemDefaults;
+	display: list-item;
+	list-style-position: outside;
+	list-style-type: "◆  ";
+}
+
 @mixin ol-list-item {
-    max-width: $content-width;
-    margin-bottom: 0 !important;
-    padding-bottom: 0.3em;
-	position: relative;
-	@include break-under(tablet){
-		left: 1em;
-		width: calc(100% - 1em);
-	}
-	p{
-		margin-bottom: 0;
-	}
-	&::marker{
-		font-weight: 500;
-		color: var(--color-accent-alt);
-	}
+	@include listItemDefaults;
 }
