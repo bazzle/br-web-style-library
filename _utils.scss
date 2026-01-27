@@ -165,12 +165,19 @@
 	overflow-x: scroll;
 	overflow-x: auto;
 	cursor: grab;
-	scroll-behavior: smooth;
+	// scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
 	scroll-snap-type: x mandatory;
 	user-select: none;
 	-webkit-user-select: none;
 	&:active {
 		cursor: grabbing;
+	}
+}
+// just disables the cursor
+.resetCursor{
+	cursor: unset!important;
+	&:active {
+		cursor: unset!important;
 	}
 }
