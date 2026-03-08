@@ -470,7 +470,6 @@ $opsz-regular: 10;
 		display: block;
 		font-weight: 500;
 		color: var(--color-accent-alt);
-		font-size: .8em;
 	}
 }
 
@@ -479,6 +478,9 @@ $opsz-regular: 10;
 	display: list-item;
 	list-style-position: outside;
 	list-style-type: "◆  ";
+	&::marker{
+		font-size: .8em;
+	}
 }
 
 @mixin ol-list-item {
