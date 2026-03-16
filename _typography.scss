@@ -11,6 +11,7 @@
 }
 .text-intro{
 	@include vars.text-intro;
+	margin-bottom: vars.$block-spacing--text;
 }
 .text-medium{
 	@include vars.text-medium;
