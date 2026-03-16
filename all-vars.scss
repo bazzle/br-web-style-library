@@ -361,7 +361,10 @@ $opsz-regular: 10;
 	font-size: $font-size-body-intro;
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
-	font-weight: 650;
+	font-weight: 600;
+	a{
+		font-weight: 600;
+	}
 	@include light-mode-wrapper{
 		font-weight: 750;
 	}
