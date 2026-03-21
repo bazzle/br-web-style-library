@@ -17,23 +17,23 @@
 }
 
 .mt {
-	margin-top: vars.$block-spacing;
+	margin-top: var(--block-spacing);
 }
 .mb {
-	margin-bottom: vars.$block-spacing;
+	margin-bottom: var(--block-spacing);
 }
 .mb--deep {
-	margin-bottom: vars.$block-spacing--deep;
+	margin-bottom: var(--block-spacing--deep);
 }
 .mb--shallow {
-	margin-bottom: vars.$block-spacing--shallow;
+	margin-bottom: var(--block-spacing--shallow);
 }
 
 .pt {
-	padding-top: vars.$block-spacing;
+	padding-top: var(--block-spacing);
 }
 .pb {
-	padding-bottom: vars.$block-spacing;
+	padding-bottom: var(--block-spacing);
 }
 
 .pb--0 {
@@ -41,10 +41,10 @@
 }
 
 .pt--deep {
-	padding-top: vars.$block-spacing--deep;
+	padding-top: var(--block-spacing--deep);
 }
 .pb--deep {
-	padding-bottom: vars.$block-spacing--deep;
+	padding-bottom: var(--block-spacing--deep);
 }
 
 .color-accent {
@@ -151,7 +151,7 @@
 .align-center {
 	display: flex;
 	align-items: center;
-	gap: vars.$column-gap;
+	gap: var(--column-gap);
 	justify-content: space-between;
 }
 

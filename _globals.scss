@@ -1,4 +1,5 @@
 :root {
+	/* Colors */
 	--color-foreground: #ffffff;
 	--color-accent: rgb(154, 243, 255);
 	--color-accent-10: rgb(154, 243, 255, 0.1);
@@ -36,6 +37,47 @@
 	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
 	--color-ridged-line-light-accent: rgba(154, 243, 255, 0.16);
 	--color-ridged-line-light-accent-alt: rgba(255, 170, 170, 0.16);
+
+	/* Layout */
+	--border-radius: 4px;
+	--gutter-padding: 4vw;
+	--block-spacing--shallow--static: 2rem;
+	--block-spacing--tiny: clamp(1rem, 3vw, 3rem);
+	--block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
+	--block-spacing: clamp(3.5rem, 6vw, 6.5rem);
+	--block-spacing--deep: clamp(8rem, 12vw, 14rem);
+	--block-spacing--text: clamp(1rem, 3vw, 3rem);
+	--column-gap: clamp(2rem, 5vw, 5rem);
+	--site-width: 1200px;
+	--site-width-margins: calc(var(--site-width) + var(--gutter-padding) + var(--gutter-padding));
+	--content-width: 900px;
+	--extended-width: 1600px;
+	--outline-focus: 2px solid var(--color-focus);
+
+	/* Typography — font sizes */
+	--font-size-display: clamp(6.6rem, 11vw, 11rem);
+	--font-size-display-medium: clamp(4.8rem, 8vw, 8rem);
+	--font-size-display-small: clamp(2.6rem, 4vw, 4rem);
+	--font-size-heading: clamp(2.66rem, 2.8vw, 2.8rem);
+	--font-size-heading-large: clamp(3.42rem, 3.8vw, 3.8rem);
+	--font-size-heading-small: clamp(2.09rem, 2.2vw, 2.2rem);
+	--font-size-medium: clamp(2.24rem, 3.2vw, 3.2rem);
+	--font-size-std: clamp(1.53rem, 1.8vw, 1.8rem);
+	--font-size-body-intro: clamp(2.112rem, 2.4vw, 2.4rem);
+	--font-size-blocky: clamp(1.656rem, 1.8vw, 1.8rem);
+	--font-size-tiny: 1.4rem;
+	--font-size-miniscule: 1.25rem;
+
+	/* Typography — font families */
+	--font-editorial: 'degular-variable', sans-serif;
+	--font-body: 'degular-variable', sans-serif;
+	--font-std: 'degular-variable', sans-serif;
+	--font-display: 'degular-variable', sans-serif;
+	--font-blocky: 'degular-variable', sans-serif;
+	--font-mono: 'degular-mono', sans-serif;
+
+	/* Typography — misc */
+	--opsz-regular: 10;
 }
 
 body {

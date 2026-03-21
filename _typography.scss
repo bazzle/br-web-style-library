@@ -11,7 +11,7 @@
 }
 .text-intro {
 	@include vars.text-intro;
-	margin-bottom: vars.$block-spacing--text;
+	margin-bottom: var(--block-spacing--text);
 }
 .text-medium {
 	@include vars.text-medium;
@@ -66,7 +66,7 @@ h4,
 h5,
 h6 {
 	&:not([class]) {
-		font-size: vars.$font-size-heading-small;
+		font-size: var(--font-size-heading-small);
 	}
 }
 
@@ -81,7 +81,7 @@ ol,
 blockquote,
 img {
 	&:not([class]) {
-		margin-bottom: vars.$block-spacing--text;
+		margin-bottom: var(--block-spacing--text);
 	}
 	> *:last-child {
 		margin-bottom: 0 !important;
@@ -94,7 +94,7 @@ p,
 li,
 blockquote {
 	&:not([class]) {
-		max-width: vars.$content-width;
+		max-width: var(--content-width);
 		@include vars.text-std;
 		@media print {
 			max-width: 100rem;
@@ -133,11 +133,11 @@ pre {
 	max-width: unset;
 	padding: 1em 1.2em;
 	background-color: var(--color-bg-solid);
-	font-family: vars.$font-mono;
+	font-family: var(--font-mono);
 }
 
 code {
-	font-family: vars.$font-mono !important;
+	font-family: var(--font-mono) !important;
 	background-color: var(--color-bg-solid);
 	font-size: 0.8em;
 }

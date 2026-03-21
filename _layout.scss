@@ -7,10 +7,10 @@ main {
 .container {
 	position: relative;
 	width: 100%;
-	max-width: vars.$site-width-margins;
+	max-width: var(--site-width-margins);
 	margin: 0 auto;
-	padding-left: vars.$gutter-padding;
-	padding-right: vars.$gutter-padding;
+	padding-left: var(--gutter-padding);
+	padding-right: var(--gutter-padding);
 	&--vertical-fill {
 		height: 100%;
 		flex-grow: 1;
@@ -21,10 +21,10 @@ main {
 
 .container____extended {
 	width: 100%;
-	max-width: vars.$extended-width;
+	max-width: var(--extended-width);
 	margin: 0 auto;
-	padding-left: vars.$gutter-padding;
-	padding-right: vars.$gutter-padding;
+	padding-left: var(--gutter-padding);
+	padding-right: var(--gutter-padding);
 }
 
 .container____toEdges {
@@ -37,18 +37,18 @@ main {
 	width: 100%;
 	margin: 0 auto;
 	@include vars.break(tablet) {
-		max-width: vars.$site-width-margins;
-		padding-left: vars.$gutter-padding;
-		padding-right: vars.$gutter-padding;
+		max-width: var(--site-width-margins);
+		padding-left: var(--gutter-padding);
+		padding-right: var(--gutter-padding);
 	}
 }
 
 .content-container {
 	width: 100%;
-	max-width: vars.$content-width;
+	max-width: var(--content-width);
 	margin: 0 auto;
-	padding-left: vars.$gutter-padding;
-	padding-right: vars.$gutter-padding;
+	padding-left: var(--gutter-padding);
+	padding-right: var(--gutter-padding);
 }
 
 .inner-2col {
@@ -56,7 +56,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	@include vars.break(tablet) {
-		gap: vars.$column-gap;
+		gap: var(--column-gap);
 		flex-direction: row;
 	}
 	.col-1 {
@@ -72,7 +72,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	@include vars.break(tablet) {
-		gap: vars.$column-gap;
+		gap: var(--column-gap);
 		flex-direction: row;
 		min-width: 30rem;
 	}

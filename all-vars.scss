@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use '../project-styles/project-specific-vars' as project;
 
 /* Useful helpers -------------------------------------- */
 
@@ -18,24 +17,13 @@
 	}
 }
 
-/* Variables ------------------------------------------------- */
-
-$border-radius: 4px;
-$gutter-padding: 4vw;
-$block-spacing--shallow--static: 2rem;
-$block-spacing--tiny: clamp(1rem, 3vw, 3rem);
-$block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
-$block-spacing: clamp(3.5rem, 6vw, 6.5rem);
-$block-spacing--deep: clamp(8rem, 12vw, 14rem);
-$block-spacing--text: clamp(1rem, 3vw, 3rem);
-$column-gap: clamp(2rem, 5vw, 5rem);
-$site-width: project.$site-width;
-$site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
-$content-width: project.$content-width;
-$extended-width: project.$extended-width;
-$outline-focus: 2px solid var(--color-focus);
-
 /* Breakpoints ------------------------------------------------- */
+
+// These sass variables are kept for use inside @media queries only,
+// as CSS custom properties cannot be used in media query conditions.
+$site-width: 1200px;
+$gutter-padding: 4vw;
+$site-width-margins: calc(($site-width + $gutter-padding) + $gutter-padding);
 
 $breakpoints: (
 	mobile: 359px,
@@ -89,58 +77,6 @@ $breakpoints--h: (
 
 /* Typography ------------------------------------------------- */
 
-// largest size / percentage reduction to get smallest size / responsive size
-@function responsiveSize($initial, $pcreduction, $vw) {
-	$min: calc(#{$initial}rem * (#{100 - $pcreduction} / 100));
-	$max: #{$initial}rem;
-	$flex: #{$vw}vw;
-	@return clamp(#{$min}, #{$flex}, #{$max});
-}
-
-// For display only
-$font-size-display: responsiveSize(11, 40, 11);
-$font-size-display-medium: responsiveSize(8, 40, 8);
-$font-size-display-small: responsiveSize(4, 35, 4);
-
-// For headings only
-$font-size-heading: responsiveSize(2.8, 5, 2.8);
-
-// For larger headings
-$font-size-heading-large: responsiveSize(3.8, 10, 3.8);
-
-// For small headings
-$font-size-heading-small: responsiveSize(2.2, 5, 2.2);
-
-// For general use
-$font-size-medium: responsiveSize(3.2, 30, 3.2);
-
-// Default font size
-$font-size-std: responsiveSize(1.8, 15, 1.8);
-
-// For body standouts
-$font-size-body-intro: responsiveSize(2.4, 12, 2.4);
-
-// For blocky text, taglines and other reasons
-$font-size-blocky: responsiveSize(1.8, 8, 1.8);
-
-// For tiny text
-$font-size-tiny: 1.4rem;
-
-// For exceptional reasons
-$font-size-miniscule: 1.25rem;
-
-// Fonts
-$font-editorial: 'degular-variable', sans-serif;
-$font-body: 'degular-variable', sans-serif;
-$font-std: 'degular-variable', sans-serif;
-$font-display: 'degular-variable', sans-serif;
-$font-blocky: 'degular-variable', sans-serif;
-$font-mono: 'degular-mono', sans-serif;
-
-// misc
-
-$opsz-regular: 10;
-
 // Type mixins
 
 @mixin loose-text-mobile {
@@ -150,8 +86,8 @@ $opsz-regular: 10;
 }
 
 @mixin text-display {
-	font-family: $font-display;
-	font-size: $font-size-display;
+	font-family: var(--font-display);
+	font-size: var(--font-size-display);
 	font-style: normal;
 	line-height: 0.8;
 	font-weight: 760;
@@ -159,8 +95,8 @@ $opsz-regular: 10;
 }
 
 @mixin text-display-medium {
-	font-family: $font-display;
-	font-size: $font-size-display-medium;
+	font-family: var(--font-display);
+	font-size: var(--font-size-display-medium);
 	font-style: normal;
 	line-height: 1;
 	font-weight: 760;
@@ -168,8 +104,8 @@ $opsz-regular: 10;
 }
 
 @mixin text-display-small {
-	font-family: $font-display;
-	font-size: $font-size-display-small;
+	font-family: var(--font-display);
+	font-size: var(--font-size-display-small);
 	font-style: normal;
 	line-height: 1.1;
 	font-variation-settings: 'opsz' 40;
@@ -184,10 +120,10 @@ $opsz-regular: 10;
 	font-feature-settings:
 		'kern' on,
 		'liga' on;
-	font-variation-settings: 'opsz' $opsz-regular;
+	font-variation-settings: 'opsz' var(--opsz-regular);
 	line-height: 1.4;
-	font-family: $font-std;
-	font-size: $font-size-std;
+	font-family: var(--font-std);
+	font-size: var(--font-size-std);
 	font-weight: 320;
 	strong,
 	b {
@@ -197,7 +133,7 @@ $opsz-regular: 10;
 	i {
 		font-style: unset;
 		font-variation-settings:
-			'opsz' $opsz-regular,
+			'opsz' var(--opsz-regular),
 			'ital' 1;
 	}
 }
@@ -208,7 +144,7 @@ $opsz-regular: 10;
 
 @mixin text-editorial {
 	:is(p, ul, ol, li, blockquote) {
-		font-family: $font-editorial;
+		font-family: var(--font-editorial);
 		line-height: 1.6;
 	}
 	ul {
@@ -237,15 +173,15 @@ $opsz-regular: 10;
 }
 
 @mixin text-link {
-	font-family: $font-body;
+	font-family: var(--font-body);
 	@include text-link-defaults;
 	font-weight: 600;
 }
 
 @mixin standalone-link {
 	@include text-link;
-	font-size: $font-size-std;
-	font-family: $font-std;
+	font-size: var(--font-size-std);
+	font-family: var(--font-std);
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
@@ -258,7 +194,7 @@ $opsz-regular: 10;
 }
 
 @mixin standalone-link-inactive {
-	font-family: $font-std;
+	font-family: var(--font-std);
 	color: var(--color-foreground);
 	font-style: normal;
 	font-weight: 600;
@@ -274,42 +210,42 @@ $opsz-regular: 10;
 
 @mixin text-heading {
 	@include text-heading-defaults;
-	font-size: $font-size-heading;
+	font-size: var(--font-size-heading);
 	font-variation-settings: 'opsz' 20;
 	font-weight: 550;
 }
 
 @mixin text-heading--chunky {
 	@include text-heading-defaults;
-	font-size: $font-size-heading;
+	font-size: var(--font-size-heading);
 	font-variation-settings: 'opsz' 20;
 	font-weight: 660;
 }
 
 @mixin text-heading--large {
 	@include text-heading-defaults;
-	font-size: $font-size-heading-large;
+	font-size: var(--font-size-heading-large);
 	font-variation-settings: 'opsz' 20;
 	font-weight: 660;
 }
 
 @mixin text-heading--thin {
 	@include text-heading-defaults;
-	font-size: $font-size-heading;
+	font-size: var(--font-size-heading);
 	font-variation-settings: 'opsz' 28;
 	font-weight: 350;
 }
 
 @mixin text-heading-small {
 	@include text-heading-defaults;
-	font-size: $font-size-heading-small;
+	font-size: var(--font-size-heading-small);
 	font-variation-settings: 'opsz' 16;
 	font-weight: 550;
 }
 
 @mixin text-intro {
-	font-family: $font-std;
-	font-size: $font-size-body-intro;
+	font-family: var(--font-std);
+	font-size: var(--font-size-body-intro);
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
 	font-weight: 600;
@@ -319,8 +255,8 @@ $opsz-regular: 10;
 }
 
 @mixin text-medium {
-	font-family: $font-std;
-	font-size: $font-size-medium;
+	font-family: var(--font-std);
+	font-size: var(--font-size-medium);
 	font-style: normal;
 	line-height: 1.6;
 	font-variation-settings: 'opsz' 32;
@@ -328,31 +264,31 @@ $opsz-regular: 10;
 }
 
 @mixin text-blocky {
-	font-family: $font-blocky;
+	font-family: var(--font-blocky);
 	font-style: normal;
 	text-transform: uppercase;
-	font-size: $font-size-blocky;
+	font-size: var(--font-size-blocky);
 	letter-spacing: 0.03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
 }
 
 @mixin text-blocky-tiny {
-	font-family: $font-blocky;
+	font-family: var(--font-blocky);
 	font-style: normal;
 	text-transform: uppercase;
-	font-size: $font-size-tiny;
+	font-size: var(--font-size-tiny);
 	letter-spacing: 0.03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
 }
 
 @mixin text-tiny {
-	font-size: $font-size-tiny;
-	font-family: $font-std;
+	font-size: var(--font-size-tiny);
+	font-family: var(--font-std);
 	letter-spacing: 0.02em;
 	font-weight: 400;
-	font-variation-settings: 'opsz' $opsz-regular;
+	font-variation-settings: 'opsz' var(--opsz-regular);
 	line-height: 1.2;
 	strong,
 	b {
@@ -361,10 +297,10 @@ $opsz-regular: 10;
 }
 
 @mixin text-miniscule {
-	font-family: $font-std;
-	font-size: $font-size-miniscule;
+	font-family: var(--font-std);
+	font-size: var(--font-size-miniscule);
 	line-height: 1.4;
-	font-variation-settings: 'opsz' $opsz-regular;
+	font-variation-settings: 'opsz' var(--opsz-regular);
 	font-weight: 400;
 	strong,
 	b {
@@ -382,13 +318,13 @@ $opsz-regular: 10;
 
 @mixin listItemDefaults {
 	list-style-position: outside;
-	max-width: $content-width;
+	max-width: var(--content-width);
 	margin-bottom: 0 !important;
 	padding-bottom: 0.3em;
 	position: relative;
 	@include break-under(tablet) {
-		margin-left: $gutter-padding;
-		width: calc(100% - $gutter-padding);
+		margin-left: var(--gutter-padding);
+		width: calc(100% - var(--gutter-padding));
 	}
 	p {
 		margin-bottom: 0;

@@ -23,7 +23,7 @@ hr {
 	border: 0;
 	background-color: black;
 	height: 1px;
-	margin-bottom: vars.$block-spacing;
+	margin-bottom: var(--block-spacing);
 }
 
 button {
@@ -39,7 +39,7 @@ input,
 button,
 label,
 textarea {
-	margin-bottom: vars.$block-spacing--shallow;
+	margin-bottom: var(--block-spacing--shallow);
 }
 
 a {
@@ -52,7 +52,7 @@ input,
 textarea,
 select {
 	&:focus-visible {
-		outline: vars.$outline-focus;
+		outline: var(--outline-focus);
 		outline-offset: 0.3em;
 		text-decoration: none;
 	}
