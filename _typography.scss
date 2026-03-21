@@ -1,35 +1,35 @@
-@use "all-vars" as vars;
+@use 'all-vars' as vars;
 
-.text-std{
+.text-std {
 	@include vars.text-std;
 }
-.text-link{
+.text-link {
 	@include vars.text-link;
 }
-.text-body{
+.text-body {
 	@include vars.text-std;
 }
-.text-intro{
+.text-intro {
 	@include vars.text-intro;
 	margin-bottom: vars.$block-spacing--text;
 }
-.text-medium{
+.text-medium {
 	@include vars.text-medium;
 }
-.text-heading{
+.text-heading {
 	@include vars.text-heading;
 }
-.text-display{
+.text-display {
 	@include vars.text-display;
 }
-.text-blocky{
+.text-blocky {
 	@include vars.text-blocky;
 }
-.text-miniscule{
+.text-miniscule {
 	@include vars.text-miniscule;
 }
 
-body{
+body {
 	position: relative;
 	padding: 0;
 	margin: 0;
@@ -40,70 +40,88 @@ body{
 	@include vars.text-std-defaults;
 }
 
-p.outset-text{
+p.outset-text {
 	line-height: 1.4;
 	color: var(--color-accent-alt);
 	border-left: 2px solid var(--color-accent-alt);
 	padding-left: 2rem;
 	position: relative;
-	@include vars.break(tablet){
+	@include vars.break(tablet) {
 		left: -2rem;
 	}
 }
 
-h2, h3, h4, h5, h6{
-	&:not([class]){
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&:not([class]) {
 		@include vars.text-heading--chunky;
 		color: var(--color-accent-alt);
 	}
 }
-h3, h4, h5, h6{
-	&:not([class]){
+h3,
+h4,
+h5,
+h6 {
+	&:not([class]) {
 		font-size: vars.$font-size-heading-small;
 	}
 }
 
-h2, h3, h4, h5, h6, p, ul, ol, blockquote, img{
-	&:not([class]){
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+img {
+	&:not([class]) {
 		margin-bottom: vars.$block-spacing--text;
 	}
 	> *:last-child {
-		margin-bottom: 0!important;
+		margin-bottom: 0 !important;
 	}
-	@include vars.break-under(tablet){
+	@include vars.break-under(tablet) {
 		overflow-wrap: break-word;
 	}
 }
-p, li, blockquote{
-	&:not([class]){
+p,
+li,
+blockquote {
+	&:not([class]) {
 		max-width: vars.$content-width;
 		@include vars.text-std;
-		@media print{
+		@media print {
 			max-width: 100rem;
 		}
 	}
 }
-li{
-	&:not([class]){
-		margin-bottom: .6rem;
-		&:last-of-type{
+li {
+	&:not([class]) {
+		margin-bottom: 0.6rem;
+		&:last-of-type {
 			margin-bottom: 0;
 		}
 	}
 }
-blockquote{
-	&:not([class]){
+blockquote {
+	&:not([class]) {
 		border-left: 1px solid var(--color-accent-alt);
 		padding-left: 1em;
 		padding-top: 0;
 		padding-bottom: 0;
 		position: relative;
-		@include vars.break(tablet){
+		@include vars.break(tablet) {
 			left: -1em;
 		}
 	}
 }
-img + em{
+img + em {
 	padding-top: 1em;
 	@include vars.text-tiny;
 	display: block;
@@ -118,8 +136,8 @@ pre {
 	font-family: vars.$font-mono;
 }
 
-code{
-	font-family: vars.$font-mono!important;
+code {
+	font-family: vars.$font-mono !important;
 	background-color: var(--color-bg-solid);
-	font-size: .8em;
+	font-size: 0.8em;
 }

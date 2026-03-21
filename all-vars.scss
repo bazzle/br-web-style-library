@@ -1,17 +1,19 @@
-@use "sass:map";
+@use 'sass:map';
 @use '../project-styles/project-specific-vars' as project;
 
 /* Useful helpers -------------------------------------- */
 
 /* Colours ------------------------------------------------- */
 
-
-@mixin svgColor($color: var(--color-foreground)){
-	path, clipPath, rect, circle{
+@mixin svgColor($color: var(--color-foreground)) {
+	path,
+	clipPath,
+	rect,
+	circle {
 		fill: $color;
 		color: $color;
 	}
-	text{
+	text {
 		color: $color;
 	}
 }
@@ -33,25 +35,24 @@ $content-width: project.$content-width;
 $extended-width: project.$extended-width;
 $outline-focus: 2px solid var(--color-focus);
 
-
 /* Breakpoints ------------------------------------------------- */
 
 $breakpoints: (
-    mobile: 359px,
-    mobile-land: 512px,
-    tablet: 641px,
-    desktop: 800px,
-    desktop-mini: 880px,
-    desktop-med: 1025px,
-    mobile-nav: 1090px,
-    desktop-wide: 1200px,
-    desktop-wider: 1340px,
-    desktop-xl: 1408px,
+	mobile: 359px,
+	mobile-land: 512px,
+	tablet: 641px,
+	desktop: 800px,
+	desktop-mini: 880px,
+	desktop-med: 1025px,
+	mobile-nav: 1090px,
+	desktop-wide: 1200px,
+	desktop-wider: 1340px,
+	desktop-xl: 1408px,
 	site-width-margins: $site-width-margins,
-	site-width: $site-width
+	site-width: $site-width,
 );
 $breakpoints--h: (
-    letterbox: 900px
+	letterbox: 900px,
 );
 
 // breakpoint mixins
@@ -65,13 +66,13 @@ $breakpoints--h: (
 
 @mixin break-under($breakpoint: medium) {
 	@if map.has-key($breakpoints, $breakpoint) {
-	  @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
-		  @content;
-	  }
+		@media screen and (max-width: map.get($breakpoints, $breakpoint)) {
+			@content;
+		}
 	}
 }
 
-@mixin break-between($breakpoint-lower, $breakpoint-higher){
+@mixin break-between($breakpoint-lower, $breakpoint-higher) {
 	@media screen and (min-width: map.get($breakpoints, $breakpoint-lower)) and (max-width: map.get($breakpoints, $breakpoint-higher)) {
 		@content;
 	}
@@ -85,8 +86,6 @@ $breakpoints--h: (
 		}
 	}
 }
-
-
 
 /* Typography ------------------------------------------------- */
 
@@ -131,12 +130,12 @@ $font-size-tiny: 1.4rem;
 $font-size-miniscule: 1.25rem;
 
 // Fonts
-$font-editorial: "degular-variable", sans-serif;
-$font-body: "degular-variable", sans-serif;
-$font-std: "degular-variable", sans-serif;
-$font-display: "degular-variable", sans-serif;
-$font-blocky: "degular-variable", sans-serif;
-$font-mono: "degular-mono", sans-serif;
+$font-editorial: 'degular-variable', sans-serif;
+$font-body: 'degular-variable', sans-serif;
+$font-std: 'degular-variable', sans-serif;
+$font-display: 'degular-variable', sans-serif;
+$font-blocky: 'degular-variable', sans-serif;
+$font-mono: 'degular-mono', sans-serif;
 
 // misc
 
@@ -145,8 +144,8 @@ $opsz-regular: 10;
 // Type mixins
 
 @mixin loose-text-mobile {
-	@include break-under(tablet){
-		letter-spacing: .03em;
+	@include break-under(tablet) {
+		letter-spacing: 0.03em;
 	}
 }
 
@@ -154,7 +153,7 @@ $opsz-regular: 10;
 	font-family: $font-display;
 	font-size: $font-size-display;
 	font-style: normal;
-	line-height: .8;
+	line-height: 0.8;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
 }
@@ -175,25 +174,31 @@ $opsz-regular: 10;
 	line-height: 1.1;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 500;
-	@media print{
+	@media print {
 		font-size: 3rem;
 		font-weight: 600;
 	}
 }
 
 @mixin text-std-defaults {
-	font-feature-settings:"kern" on,"liga" on;
+	font-feature-settings:
+		'kern' on,
+		'liga' on;
 	font-variation-settings: 'opsz' $opsz-regular;
 	line-height: 1.4;
 	font-family: $font-std;
 	font-size: $font-size-std;
 	font-weight: 320;
-	strong, b{
+	strong,
+	b {
 		font-weight: 650;
 	}
-	em, i{
+	em,
+	i {
 		font-style: unset;
-		font-variation-settings: 'opsz' $opsz-regular, "ital" 1;
+		font-variation-settings:
+			'opsz' $opsz-regular,
+			'ital' 1;
 	}
 }
 
@@ -206,13 +211,13 @@ $opsz-regular: 10;
 		font-family: $font-editorial;
 		line-height: 1.6;
 	}
-	ul{
-		li{
+	ul {
+		li {
 			@include ul-list-item;
 		}
 	}
-	ol{
-		li{
+	ol {
+		li {
 			@include ol-list-item;
 		}
 	}
@@ -222,10 +227,10 @@ $opsz-regular: 10;
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
-	text-decoration-thickness: .05em;
+	text-decoration-thickness: 0.05em;
 	font-style: normal;
 	font-weight: 500;
-	&:hover{
+	&:hover {
 		text-decoration: none;
 		color: var(--color-foreground);
 	}
@@ -244,10 +249,10 @@ $opsz-regular: 10;
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
-	text-decoration-thickness: .05em;
+	text-decoration-thickness: 0.05em;
 	font-style: normal;
 	font-weight: 550;
-	&:hover{
+	&:hover {
 		text-decoration: none;
 	}
 }
@@ -257,14 +262,14 @@ $opsz-regular: 10;
 	color: var(--color-foreground);
 	font-style: normal;
 	font-weight: 600;
-	@media print{
+	@media print {
 		font-weight: 700;
 	}
 }
 
 @mixin text-heading-defaults {
 	@include text-std-defaults;
-	line-height:1.1;
+	line-height: 1.1;
 }
 
 @mixin text-heading {
@@ -308,7 +313,7 @@ $opsz-regular: 10;
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
 	font-weight: 600;
-	a{
+	a {
 		font-weight: 600;
 	}
 }
@@ -327,7 +332,7 @@ $opsz-regular: 10;
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: $font-size-blocky;
-	letter-spacing: .03em;
+	letter-spacing: 0.03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
 }
@@ -337,21 +342,20 @@ $opsz-regular: 10;
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: $font-size-tiny;
-	letter-spacing: .03em;
+	letter-spacing: 0.03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
 }
 
-
-
 @mixin text-tiny {
 	font-size: $font-size-tiny;
 	font-family: $font-std;
-	letter-spacing: .02em;
+	letter-spacing: 0.02em;
 	font-weight: 400;
 	font-variation-settings: 'opsz' $opsz-regular;
 	line-height: 1.2;
-	strong, b{
+	strong,
+	b {
 		font-weight: 500;
 	}
 }
@@ -362,34 +366,34 @@ $opsz-regular: 10;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' $opsz-regular;
 	font-weight: 400;
-	strong, b{
+	strong,
+	b {
 		font-weight: 500;
 	}
 }
 
-
 /* Misc ------------------------------------------------- */
 
-@mixin ridged-line{
-    height: 2px;
+@mixin ridged-line {
+	height: 2px;
 	background-color: var(--color-ridged-line-shadow);
-    border-bottom: 1px solid var(--color-ridged-line-light);
+	border-bottom: 1px solid var(--color-ridged-line-light);
 }
 
-@mixin listItemDefaults{
+@mixin listItemDefaults {
 	list-style-position: outside;
 	max-width: $content-width;
 	margin-bottom: 0 !important;
 	padding-bottom: 0.3em;
 	position: relative;
-	@include break-under(tablet){
+	@include break-under(tablet) {
 		margin-left: $gutter-padding;
 		width: calc(100% - $gutter-padding);
 	}
-	p{
+	p {
 		margin-bottom: 0;
 	}
-	&::marker{
+	&::marker {
 		display: block;
 		font-weight: 500;
 		color: var(--color-accent-alt);
@@ -400,9 +404,9 @@ $opsz-regular: 10;
 	@include listItemDefaults;
 	display: list-item;
 	list-style-position: outside;
-	list-style-type: "◆  ";
-	&::marker{
-		font-size: .8em;
+	list-style-type: '◆  ';
+	&::marker {
+		font-size: 0.8em;
 	}
 }
 

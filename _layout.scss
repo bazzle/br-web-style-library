@@ -1,25 +1,25 @@
-@use "all-vars" as vars;
+@use 'all-vars' as vars;
 
-main{
+main {
 	min-height: 80vh;
 }
 
-.container{
+.container {
 	position: relative;
 	width: 100%;
 	max-width: vars.$site-width-margins;
 	margin: 0 auto;
 	padding-left: vars.$gutter-padding;
 	padding-right: vars.$gutter-padding;
-	&--vertical-fill{
-		height:100%;
+	&--vertical-fill {
+		height: 100%;
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 	}
 }
 
-.container____extended{
+.container____extended {
 	width: 100%;
 	max-width: vars.$extended-width;
 	margin: 0 auto;
@@ -27,23 +27,23 @@ main{
 	padding-right: vars.$gutter-padding;
 }
 
-.container____toEdges{
+.container____toEdges {
 	width: 100%;
 	margin: 0 auto;
 }
 
-.container____toEdgesMobile{
+.container____toEdgesMobile {
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-	@include vars.break(tablet){
+	@include vars.break(tablet) {
 		max-width: vars.$site-width-margins;
 		padding-left: vars.$gutter-padding;
 		padding-right: vars.$gutter-padding;
 	}
 }
 
-.content-container{
+.content-container {
 	width: 100%;
 	max-width: vars.$content-width;
 	margin: 0 auto;
@@ -51,53 +51,53 @@ main{
 	padding-right: vars.$gutter-padding;
 }
 
-.inner-2col{
+.inner-2col {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	@include vars.break(tablet){
+	@include vars.break(tablet) {
 		gap: vars.$column-gap;
 		flex-direction: row;
 	}
-	.col-1{
+	.col-1 {
 		flex: 2;
 	}
-	.col-2{
+	.col-2 {
 		flex: 5;
 	}
 }
 
-.inner-2col--50-50{
+.inner-2col--50-50 {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	@include vars.break(tablet){
+	@include vars.break(tablet) {
 		gap: vars.$column-gap;
 		flex-direction: row;
 		min-width: 30rem;
 	}
-	.col-1{
+	.col-1 {
 		flex: 1;
 	}
-	.col-2{
+	.col-2 {
 		flex: 1;
 	}
 }
 
-@mixin articleImagesDefaults{
+@mixin articleImagesDefaults {
 	display: flex;
 	gap: 2vw;
 	justify-content: center;
 	align-items: flex-start;
 }
 
-.article-images{
-	&--2{
+.article-images {
+	&--2 {
 		@include articleImagesDefaults;
 	}
-	&--4{
+	&--4 {
 		@include articleImagesDefaults;
-		@include vars.break(tablet){
+		@include vars.break(tablet) {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			width: 90vw;
 			height: auto;
@@ -107,9 +107,9 @@ main{
 			transform: translate(-50%);
 		}
 	}
-	
-	&.extended{
-		@include vars.break(tablet){
+
+	&.extended {
+		@include vars.break(tablet) {
 			width: 90vw;
 			height: auto;
 			max-width: 1200px;

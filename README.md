@@ -1,7 +1,7 @@
 # Style library for my personal online presence
 
-* Portfolio site
-* Weeknotes site
+- Portfolio site
+- Weeknotes site
 
 ## Instructions
 
@@ -20,6 +20,7 @@ mkdir -p styles/project-styles && touch styles/project-styles/project-specific.s
 You will need to add some variables here to allow the css to compile.
 
 3. Add these style resources to load the fonts
+
 ```
 <link rel="preconnect" href="https://use.typekit.net/sqp3jyo.css" />
 <link rel="stylesheet" href="https://use.typekit.net/sqp3jyo.css" />
