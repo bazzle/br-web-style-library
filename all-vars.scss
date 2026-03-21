@@ -3,15 +3,6 @@
 
 /* Useful helpers -------------------------------------- */
 
-@mixin light-mode-wrapper {
-	body.light-mode &{
-		@content;
-	}
-	@media print{
-		@content;
-	}
-}
-
 /* Colours ------------------------------------------------- */
 
 
@@ -86,7 +77,7 @@ $breakpoints--h: (
 	}
 }
 
-// height 
+// height
 @mixin break--h($breakpoint) {
 	@if map.has-key($breakpoints--h, $breakpoint) {
 		@media screen and (max-height: map.get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
@@ -166,9 +157,6 @@ $opsz-regular: 10;
 	line-height: .8;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
-	@include light-mode-wrapper{
-		font-weight: 780;
-	}
 }
 
 @mixin text-display-medium {
@@ -178,9 +166,6 @@ $opsz-regular: 10;
 	line-height: 1;
 	font-weight: 760;
 	font-variation-settings: 'opsz' 72;
-	@include light-mode-wrapper{
-		font-weight: 780;
-	}
 }
 
 @mixin text-display-small {
@@ -190,9 +175,6 @@ $opsz-regular: 10;
 	line-height: 1.1;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 500;
-	@include light-mode-wrapper{
-		font-weight: 600;
-	}
 	@media print{
 		font-size: 3rem;
 		font-weight: 600;
@@ -206,14 +188,8 @@ $opsz-regular: 10;
 	font-family: $font-std;
 	font-size: $font-size-std;
 	font-weight: 320;
-	@include light-mode-wrapper{
-		font-weight: 440;
-	}
 	strong, b{
 		font-weight: 650;
-		@include light-mode-wrapper{
-			font-weight: 660;
-		}
 	}
 	em, i{
 		font-style: unset;
@@ -253,19 +229,12 @@ $opsz-regular: 10;
 		text-decoration: none;
 		color: var(--color-foreground);
 	}
-	@include light-mode-wrapper{
-		text-underline-offset: .15em;
-		text-decoration-thickness: .08em;
-	}
 }
 
 @mixin text-link {
 	font-family: $font-body;
 	@include text-link-defaults;
 	font-weight: 600;
-	@include light-mode-wrapper{
-		font-weight: 700;
-	}
 }
 
 @mixin standalone-link {
@@ -278,11 +247,6 @@ $opsz-regular: 10;
 	text-decoration-thickness: .05em;
 	font-style: normal;
 	font-weight: 550;
-	@include light-mode-wrapper{
-		font-weight: 650;
-		text-underline-offset: .15em;
-		text-decoration-thickness: .08em;
-	}
 	&:hover{
 		text-decoration: none;
 	}
@@ -293,9 +257,6 @@ $opsz-regular: 10;
 	color: var(--color-foreground);
 	font-style: normal;
 	font-weight: 600;
-	@include light-mode-wrapper{
-		font-weight: 700;
-	}
 	@media print{
 		font-weight: 700;
 	}
@@ -311,9 +272,6 @@ $opsz-regular: 10;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
 	font-weight: 550;
-	@include light-mode-wrapper{
-		font-weight: 600;
-	}
 }
 
 @mixin text-heading--chunky {
@@ -321,9 +279,6 @@ $opsz-regular: 10;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 20;
 	font-weight: 660;
-	@include light-mode-wrapper{
-		font-weight: 730;
-	}
 }
 
 @mixin text-heading--large {
@@ -331,9 +286,6 @@ $opsz-regular: 10;
 	font-size: $font-size-heading-large;
 	font-variation-settings: 'opsz' 20;
 	font-weight: 660;
-	@include light-mode-wrapper{
-		font-weight: 730;
-	}
 }
 
 @mixin text-heading--thin {
@@ -341,9 +293,6 @@ $opsz-regular: 10;
 	font-size: $font-size-heading;
 	font-variation-settings: 'opsz' 28;
 	font-weight: 350;
-	@include light-mode-wrapper{
-		font-weight: 450;
-	}
 }
 
 @mixin text-heading-small {
@@ -351,9 +300,6 @@ $opsz-regular: 10;
 	font-size: $font-size-heading-small;
 	font-variation-settings: 'opsz' 16;
 	font-weight: 550;
-	@include light-mode-wrapper{
-		font-weight: 600;
-	}
 }
 
 @mixin text-intro {
@@ -365,9 +311,6 @@ $opsz-regular: 10;
 	a{
 		font-weight: 600;
 	}
-	@include light-mode-wrapper{
-		font-weight: 750;
-	}
 }
 
 @mixin text-medium {
@@ -377,9 +320,6 @@ $opsz-regular: 10;
 	line-height: 1.6;
 	font-variation-settings: 'opsz' 32;
 	font-weight: 450;
-	@include light-mode-wrapper{
-		font-weight: 550;
-	}
 }
 
 @mixin text-blocky {
@@ -390,10 +330,6 @@ $opsz-regular: 10;
 	letter-spacing: .03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
-	@include light-mode-wrapper{
-		font-weight: 650;
-		letter-spacing: .06em;
-	}
 }
 
 @mixin text-blocky-tiny {
@@ -404,10 +340,6 @@ $opsz-regular: 10;
 	letter-spacing: .03em;
 	font-weight: 550;
 	font-variation-settings: 'opsz' 16;
-	@include light-mode-wrapper{
-		font-weight: 650;
-		letter-spacing: .06em;
-	}
 }
 
 
@@ -419,14 +351,8 @@ $opsz-regular: 10;
 	font-weight: 400;
 	font-variation-settings: 'opsz' $opsz-regular;
 	line-height: 1.2;
-	@include light-mode-wrapper{
-		font-weight: 500;
-	}
 	strong, b{
 		font-weight: 500;
-		@include light-mode-wrapper{
-			font-weight: 600;
-		}
 	}
 }
 
@@ -436,14 +362,8 @@ $opsz-regular: 10;
 	line-height: 1.4;
 	font-variation-settings: 'opsz' $opsz-regular;
 	font-weight: 400;
-	@include light-mode-wrapper{
-		font-weight: 500;
-	}
 	strong, b{
 		font-weight: 500;
-		@include light-mode-wrapper{
-			font-weight: 600;
-		}
 	}
 }
 
