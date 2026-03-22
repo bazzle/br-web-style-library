@@ -2,6 +2,15 @@
 
 /* Useful helpers -------------------------------------- */
 
+@mixin light-mode-wrapper {
+	body.light-mode & {
+		@content;
+	}
+	@media print {
+		@content;
+	}
+}
+
 /* Colours ------------------------------------------------- */
 
 @mixin svgColor($color: var(--color-foreground)) {
