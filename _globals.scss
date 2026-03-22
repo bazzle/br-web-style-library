@@ -5,8 +5,10 @@
 	// If yes to both, create a static version
 	--color-foreground-static: #ffffff;
 	--color-foreground-inv-static: #2c2c2c;
+	--color-accent-70-static: rgb(154, 243, 255);
 	--color-accent-static: rgb(154, 243, 255);
 	--color-accent-alt-static: rgb(255, 170, 170);
+	--color-accent-alt-70-static: rgb(255, 170, 170, 0.7);
 	--color-bg-static: rgb(32, 32, 32);
 	--color-bg-alt-static: rgb(22, 22, 22);
 }
@@ -17,6 +19,7 @@
 	--color-accent-10: rgb(154, 243, 255, 0.1);
 	--color-accent-20: rgb(154, 243, 255, 0.2);
 	--color-accent-50: rgb(154, 243, 255, 0.5);
+	--color-accent-70: rgb(154, 243, 255, 0.7);
 	--color-accent-alt: rgb(255, 170, 170);
 	--color-accent-alt-static: rgb(255, 170, 170);
 	--color-accent-alt-70: rgb(255, 170, 170, 0.7);
@@ -46,21 +49,7 @@
 	--color-ridged-line-light: rgb(255, 255, 255);
 }
 
-body {
-	@media print {
-		--color-foreground: #2c2c2c;
-		--color-foreground-inv: #ffffff;
-		--color-accent: rgb(56, 106, 113);
-		--color-accent-alt: rgb(175, 74, 74);
-		--color-bg: #e3e3e3;
-		--color-bg-alt: #d1d1d1;
-		--color-bg-off-solid: #fafafa;
-		--color-bg-solid: #ffffff;
-		--color-focus: rgb(56, 106, 113);
-	}
-}
-
-[data-theme='light'] {
+:root {
 	/* Layout */
 	--border-radius: 4px;
 	--gutter-padding: 4vw;
@@ -103,4 +92,18 @@ body {
 
 	/* Typography — misc */
 	--opsz-regular: 10;
+}
+
+body {
+	@media print {
+		--color-foreground: #2c2c2c;
+		--color-foreground-inv: #ffffff;
+		--color-accent: rgb(56, 106, 113);
+		--color-accent-alt: rgb(175, 74, 74);
+		--color-bg: #e3e3e3;
+		--color-bg-alt: #d1d1d1;
+		--color-bg-off-solid: #fafafa;
+		--color-bg-solid: #ffffff;
+		--color-focus: rgb(56, 106, 113);
+	}
 }

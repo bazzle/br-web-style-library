@@ -3,7 +3,7 @@
 /* Useful helpers -------------------------------------- */
 
 @mixin light-mode-wrapper {
-	[data-theme="light"] & {
+	[data-theme='light'] & {
 		@content;
 	}
 	@media print {
@@ -134,6 +134,15 @@ $breakpoints--h: (
 	font-family: var(--font-std);
 	font-size: var(--font-size-std);
 	font-weight: 320;
+	[data-theme='light'] {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		-webkit-text-stroke: 0.2px currentColor;
+	}
+	[data-theme='dark'] {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 	strong,
 	b {
 		font-weight: 650;
