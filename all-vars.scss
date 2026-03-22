@@ -13,7 +13,7 @@
 
 /* Colours ------------------------------------------------- */
 
-@mixin svgColor($color: var(--color-foreground)) {
+@mixin svgColor($color: var(--color-fg)) {
 	path,
 	clipPath,
 	rect,
@@ -186,7 +186,7 @@ $breakpoints--h: (
 	font-weight: 500;
 	&:hover {
 		text-decoration: none;
-		color: var(--color-foreground);
+		color: var(--color-fg);
 	}
 }
 
@@ -213,7 +213,7 @@ $breakpoints--h: (
 
 @mixin standalone-link-inactive {
 	font-family: var(--font-std);
-	color: var(--color-foreground);
+	color: var(--color-fg);
 	font-style: normal;
 	font-weight: 600;
 	@media print {

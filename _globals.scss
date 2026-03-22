@@ -3,8 +3,8 @@
 	// Does the colour need dark mode and LM versions?
 	// Does the colour need a static version, same across both?
 	// If yes to both, create a static version
-	--color-foreground-static: #ffffff;
-	--color-foreground-inv-static: #2c2c2c;
+	--color-fg-static: #ffffff;
+	--color-fg-inv-static: #2c2c2c;
 	--color-accent-70-static: rgb(154, 243, 255);
 	--color-accent-static: rgb(154, 243, 255);
 	--color-accent-alt-static: rgb(255, 170, 170);
@@ -13,8 +13,8 @@
 	--color-bg-alt-static: rgb(22, 22, 22);
 }
 [data-theme='dark'] {
-	--color-foreground: #ffffff;
-	--color-foreground-inv: #2c2c2c;
+	--color-fg: #ffffff;
+	--color-fg-inv: #2c2c2c;
 	--color-accent: rgb(154, 243, 255);
 	--color-accent-10: rgb(154, 243, 255, 0.1);
 	--color-accent-20: rgb(154, 243, 255, 0.2);
@@ -35,8 +35,8 @@
 	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
 }
 [data-theme='light'] {
-	--color-foreground: #2c2c2c;
-	--color-foreground-inv: #ffffff;
+	--color-fg: #2c2c2c;
+	--color-fg-inv: #ffffff;
 	--color-accent: rgb(67, 127, 135);
 	--color-accent-alt: rgb(185, 89, 89);
 	--color-bg: #e3e3e3;
@@ -96,8 +96,8 @@
 
 body {
 	@media print {
-		--color-foreground: #2c2c2c;
-		--color-foreground-inv: #ffffff;
+		--color-fg: #2c2c2c;
+		--color-fg-inv: #ffffff;
 		--color-accent: rgb(56, 106, 113);
 		--color-accent-alt: rgb(175, 74, 74);
 		--color-bg: #e3e3e3;
