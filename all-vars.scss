@@ -3,7 +3,7 @@
 /* Useful helpers -------------------------------------- */
 
 @mixin light-mode-wrapper {
-	body.light-mode & {
+	[data-theme="light"] & {
 		@content;
 	}
 	@media print {
