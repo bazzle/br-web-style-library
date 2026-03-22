@@ -1,17 +1,5 @@
 @use 'all-vars' as vars;
 
-.highlight {
-	color: var(--color-accent);
-}
-
-.highlight-on-link {
-	color: var(--color-fg);
-}
-
-.highlight-alt {
-	color: var(--color-accent-alt);
-}
-
 .p-relative {
 	position: relative;
 }

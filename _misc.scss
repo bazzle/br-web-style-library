@@ -9,12 +9,12 @@ body {
 		position: fixed;
 		z-index: 10;
 	}
-	&:before {
+	&::before {
 		left: 0;
 		width: 1px;
 		background-color: var(--color-accent);
 	}
-	&:after {
+	&::after {
 		right: 0;
 		width: 1px;
 		background-color: var(--color-accent-alt);

@@ -381,3 +381,15 @@ $breakpoints--h: (
 		cursor: grabbing;
 	}
 }
+
+@mixin highlight {
+	color: var(--color-accent);
+}
+
+@mixin highlight-on-link {
+	color: var(--color-fg);
+}
+
+@mixin highlight-alt {
+	color: var(--color-accent-alt);
+}
