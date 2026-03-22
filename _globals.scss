@@ -36,7 +36,7 @@
 	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
 }
 [data-theme='light'] {
-	--color-fg: #2c2c2c;
+	--color-fg: rgb(67, 67, 67);
 	--color-fg-inv: #ffffff;
 	--color-accent: rgb(67, 127, 135);
 	--color-accent-20: rgb(67, 127, 135, 0.2);
@@ -65,9 +65,7 @@
 	--block-spacing--text: clamp(1rem, 3vw, 3rem);
 	--column-gap: clamp(2rem, 5vw, 5rem);
 	--site-width: 1200px;
-	--site-width-margins: calc(
-		var(--site-width) + var(--gutter-padding) + var(--gutter-padding)
-	);
+	--site-width-margins: calc(var(--site-width) + var(--gutter-padding) + var(--gutter-padding));
 	--content-width: 900px;
 	--extended-width: 1600px;
 	--outline-focus: 2px solid var(--color-focus);

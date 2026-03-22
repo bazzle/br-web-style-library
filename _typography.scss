@@ -34,11 +34,16 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: var(--color-bg-off-solid);
-	@include vars.light-mode-wrapper {
-		background-color: var(--color-bg);
-	}
 	color: var(--color-fg);
 	@include vars.text-std-defaults;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include vars.light-mode-wrapper {
+		background-color: var(--color-bg);
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		-webkit-text-stroke: 0.4px currentColor;
+	}
 }
 
 p.outset-text {

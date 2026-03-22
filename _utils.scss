@@ -1,5 +1,17 @@
 @use 'all-vars' as vars;
 
+.highlight {
+	@include vars.highlight;
+}
+
+.highlight-on-link {
+	@include vars.highlight-on-link;
+}
+
+.highlight-alt {
+	@include vars.highlight-alt;
+}
+
 .p-relative {
 	position: relative;
 }
