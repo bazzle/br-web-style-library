@@ -39,7 +39,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@include vars.light-mode-wrapper {
-		background-color: var(--color-bg);
+		background-color: var(--color-bg-off-solid);
 		-webkit-font-smoothing: auto;
 		-moz-osx-font-smoothing: auto;
 		-webkit-text-stroke: 0.4px currentColor;
