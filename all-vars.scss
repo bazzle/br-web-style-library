@@ -112,6 +112,15 @@ $breakpoints--h: (
 	font-variation-settings: 'opsz' 72;
 }
 
+@mixin text-display-large {
+	font-family: var(--font-display);
+	font-size: var(--font-size-display-large);
+	font-style: normal;
+	line-height: 0.8;
+	font-weight: 760;
+	font-variation-settings: 'opsz' 72;
+}
+
 @mixin text-display-small {
 	font-family: var(--font-display);
 	font-size: var(--font-size-display-small);
