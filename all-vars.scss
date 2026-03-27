@@ -128,10 +128,6 @@ $breakpoints--h: (
 	line-height: 1.1;
 	font-variation-settings: 'opsz' 40;
 	font-weight: 500;
-	@media print {
-		font-size: 3rem;
-		font-weight: 600;
-	}
 }
 
 @mixin text-std-defaults {
@@ -269,9 +265,9 @@ $breakpoints--h: (
 	font-size: var(--font-size-body-intro);
 	line-height: 1.2;
 	font-variation-settings: 'opsz' 26;
-	font-weight: 600;
+	font-weight: 500;
 	a {
-		font-weight: 600;
+		font-weight: 500;
 	}
 }
 
@@ -290,7 +286,7 @@ $breakpoints--h: (
 	text-transform: uppercase;
 	font-size: var(--font-size-blocky);
 	letter-spacing: 0.03em;
-	font-weight: 550;
+	font-weight: 450;
 	font-variation-settings: 'opsz' 16;
 }
 
@@ -300,7 +296,7 @@ $breakpoints--h: (
 	text-transform: uppercase;
 	font-size: var(--font-size-tiny);
 	letter-spacing: 0.03em;
-	font-weight: 550;
+	font-weight: 450;
 	font-variation-settings: 'opsz' 16;
 }
 
