@@ -1,0 +1,122 @@
+:root {
+	// Theme colours
+	// Does the colour need dark mode and LM versions?
+	// Does the colour need a static version, same across both?
+	// If yes to both, create a static version
+	--color-fg-static: #ffffff;
+	--color-fg-inv-static: #2c2c2c;
+	--color-accent-70-static: rgb(154, 243, 255);
+	--color-accent-static: rgb(154, 243, 255);
+	--color-accent-alt-static: rgb(255, 170, 170);
+	--color-accent-alt-70-static: rgb(255, 170, 170, 0.7);
+	--color-bg-static: rgb(32, 32, 32);
+	--color-bg-alt-static: rgb(22, 22, 22);
+}
+[data-theme='dark'] {
+	--color-fg: #ffffff;
+	--color-fg-inv: #2c2c2c;
+	--color-accent: rgb(154, 243, 255);
+	--color-accent-10: rgb(154, 243, 255, 0.1);
+	--color-accent-20: rgb(154, 243, 255, 0.2);
+	--color-accent-50: rgb(154, 243, 255, 0.5);
+	--color-accent-70: rgb(154, 243, 255, 0.7);
+	--color-accent-alt: rgb(255, 170, 170);
+	--color-accent-alt-70: rgb(255, 170, 170, 0.7);
+	--color-bg: rgb(32, 32, 32);
+	--color-bg-inv: rgb(227, 227, 227);
+	--color-bg-alt: rgb(22, 22, 22);
+	--color-bg-alt-70: rgba(22, 22, 22, 0.7);
+	--color-bg-off-solid: #151515;
+	--color-bg-solid: #000000;
+	--color-focus: rgb(154, 243, 255);
+	--color-accent-faded: #9af3ff76;
+	--color-accent-alt-faded: rgba(255, 170, 170, 0.388);
+	--color-ridged-line-shadow: rgba(0, 0, 0, 0.7);
+	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
+}
+[data-theme='light'] {
+	--color-fg: rgb(67, 67, 67);
+	--color-fg-70: rgba(67, 67, 67, 0.7);
+	--color-fg-inv: #ffffff;
+	--color-accent: rgb(67, 127, 135);
+	--color-accent-20: rgb(67, 127, 135, 0.2);
+	--color-accent-50: rgb(67, 127, 135, 0.5);
+	--color-accent-alt: rgb(185, 89, 89);
+	--color-accent-alt-50: rgba(185, 89, 89, 0.5);
+	--color-accent-alt-70: rgba(185, 89, 89, 0.7);
+	--color-bg: rgb(227, 227, 227);
+	--color-bg-70: rgb(227, 227, 227, 0.7);
+	--color-bg-inv: rgb(32, 32, 32);
+	--color-bg-alt: rgb(209, 209, 209);
+	--color-bg-alt-70: rgba(209, 209, 209, 0.7);
+	--color-bg-off-solid: rgb(238, 238, 238);
+	--color-bg-off-solid-70: rgba(238, 238, 238, 0.7);
+	--color-bg-solid: #ffffff;
+	--color-bg-solid-50: rgba(255, 255, 255, 0.5);
+	--color-bg-solid-30: rgba(255, 255, 255, 0.3);
+	--color-focus: rgb(56, 106, 113);
+	--color-ridged-line-shadow: rgba(0, 0, 0, 0.05);
+	--color-ridged-line-light: rgb(255, 255, 255);
+}
+
+:root {
+	/* Layout */
+	--border-radius: 4px;
+	--gutter-padding: 4vw;
+	--block-spacing--shallow--static: 2rem;
+	--block-spacing--tiny: clamp(1rem, 3vw, 3rem);
+	--block-spacing--shallow: clamp(2rem, 4vw, 4.5rem);
+	--block-spacing: clamp(3.5rem, 6vw, 6.5rem);
+	--block-spacing--deep: clamp(8rem, 12vw, 14rem);
+	--block-spacing--text: clamp(1rem, 3vw, 3rem);
+	--column-gap: clamp(2rem, 5vw, 5rem);
+	--site-width: 1200px;
+	--site-width-margins: calc(var(--site-width) + var(--gutter-padding) + var(--gutter-padding));
+	--content-width: 900px;
+	--extended-width: 1600px;
+	--outline-focus: 2px solid var(--color-focus);
+
+	/* Typography — font sizes */
+	// Display
+	--font-size-display: clamp(6.6rem, 11vw, 11rem);
+	--font-size-display-medium: clamp(4.8rem, 8vw, 8rem);
+	--font-size-display-small: clamp(2.6rem, 4vw, 4rem);
+	--font-size-display-large: clamp(6.5rem, 8vw, 12.5rem);
+	// Heading
+	--font-size-heading: clamp(2.66rem, 2.8vw, 2.8rem);
+	--font-size-heading-small: clamp(2.09rem, 2.2vw, 2.2rem);
+	--font-size-heading-large: clamp(3.42rem, 3.8vw, 3.8rem);
+	// Body
+	--font-size-std: clamp(1.53rem, 1.8vw, 1.8rem);
+	--font-size-medium: clamp(2.24rem, 3.2vw, 3.2rem);
+	// Others
+	--font-size-body-intro: clamp(2.112rem, 2.4vw, 2.4rem);
+	--font-size-blocky: clamp(1.656rem, 1.8vw, 1.8rem);
+	--font-size-tiny: 1.4rem;
+	--font-size-miniscule: 1.25rem;
+
+	/* Typography — font families */
+	--font-editorial: 'degular-variable', sans-serif;
+	--font-body: 'degular-variable', sans-serif;
+	--font-std: 'degular-variable', sans-serif;
+	--font-display: 'degular-variable', sans-serif;
+	--font-blocky: 'degular-variable', sans-serif;
+	--font-mono: 'degular-mono', sans-serif;
+
+	/* Typography — misc */
+	--opsz-regular: 10;
+}
+
+body {
+	@media print {
+		--color-fg: #2c2c2c;
+		--color-fg-inv: #ffffff;
+		--color-accent: rgb(56, 106, 113);
+		--color-accent-alt: rgb(175, 74, 74);
+		--color-bg: #e3e3e3;
+		--color-bg-alt: #d1d1d1;
+		--color-bg-off-solid: #fafafa;
+		--color-bg-solid: #ffffff;
+		--color-focus: rgb(56, 106, 113);
+	}
+}
