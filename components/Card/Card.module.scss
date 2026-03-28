@@ -1,0 +1,53 @@
+@use '../../global/all-vars' as vars;
+
+.card {
+	position: relative;
+	border: 1px solid var(--color-accent-alt-70);
+	padding: 1rem;
+	padding-bottom: 2rem;
+	@include vars.light-mode-wrapper {
+		border: 1px solid var(--color-accent-alt);
+	}
+	&__image {
+		width: 100%;
+		height: auto;
+	}
+	&__header {
+		margin-top: 0;
+		margin-bottom: 0.4em;
+		a {
+			@include vars.text-heading-small;
+			color: var(--color-accent);
+			gap: 0.1em;
+			align-items: baseline;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		svg {
+			height: 0.7em;
+			width: auto;
+			padding-left: 0.2em;
+			transform: translatey(10%);
+		}
+	}
+	&____basic {
+		.card__image {
+			display: none;
+		}
+		.card__content {
+			padding: 0 1rem;
+		}
+	}
+	&__content {
+		padding: 1rem;
+	}
+	&__description {
+		@include vars.text-tiny;
+	}
+}
