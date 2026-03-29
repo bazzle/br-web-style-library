@@ -1,4 +1,4 @@
-# BR Web Design system. DeBazzled
+# BR Web Design system
 
 Tentatively named **DeBazzled 🎈💥**
 
