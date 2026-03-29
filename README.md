@@ -2,11 +2,9 @@
 
 Tentatively named **DeBazzled 🎈💥**
 
-Personal design system — tokens, global styles, and composable components. This is the foundation layer for my websites. Every site built on this should look and feel identical at the base layer.
+Personal design system — tokens, global styles, and composable components. This is the foundation layer for my websites built on next.js Every site built on this should look and feel identical at the base layer.
 
-This repo is consumed as a **git submodule**. It contains source files only — no build step, no compiled output, no dependencies. The consuming app's Next.js pipeline handles all compilation.
-
-
+This repo is consumed as a **git submodule**. It contains source files only — no build step, no compiled output, no dependencies. The consuming website's Next.js pipeline handles all compilation.
 
 ## Setup in a new project
 
@@ -18,16 +16,22 @@ git submodule add https://github.com/bazzle/br-web-style-library/app/ui/style-li
 
 ### 2. Configure import aliases
 
-In `jsconfig.json` or `tsconfig.json`:
+In `jsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
     "paths": {
-      "@style-library/*": ["./app/ui/style-library/*"]
+      "@/style-library/*": ["./app/ui/style-library/*"]
     }
   }
 }
+```
+
+Then you can import components using:
+
+```
+import Card from '@/style-library/components/Card
 ```
 
 ### 3. Configure SCSS paths
