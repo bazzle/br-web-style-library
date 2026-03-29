@@ -11,7 +11,7 @@ This repo is consumed as a **git submodule**. It contains source files only — 
 ### 1. Add the submodule
 
 ```bash
-git submodule add https://github.com/bazzle/br-web-style-library/app/ui/style-library
+git submodule add https://github.com/bazzle/br-web-style-library app/ui/style-library
 ```
 
 ### 2. Configure import aliases
