@@ -9,6 +9,22 @@ html {
 	}
 }
 
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: var(--color-bg-off-solid);
+	color: var(--color-fg);
+	@include vars.text-std-defaults;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include vars.light-mode-wrapper {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		-webkit-text-stroke: 0.4px currentColor;
+	}
+}
+
 ::selection {
 	background-color: var(--color-accent);
 	color: var(--color-bg);
