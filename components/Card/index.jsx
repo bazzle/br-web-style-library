@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { motion } from 'motion/react'
-const MotionImage = motion.create(Image)
 import styles from './Card.module.scss'
 
 export default function Card({
@@ -35,12 +34,8 @@ export default function Card({
 
 	const cardImage = () => {
 		return (
-			<MotionImage
+			<motion.div
 				className={styles.card__image}
-				src={imageSrc}
-				alt={imageAlt}
-				width="540"
-				height="360"
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				viewport={{ once: false }}
@@ -51,7 +46,14 @@ export default function Card({
 					stiffness: 200,
 					damping: 30,
 				}}
-			/>
+			>
+				<Image
+					src={imageSrc}
+					alt={imageAlt}
+					width={540}
+					height={360}
+				/>
+			</motion.div>
 		)
 	}
 
