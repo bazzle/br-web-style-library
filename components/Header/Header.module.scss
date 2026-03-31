@@ -1,0 +1,116 @@
+@use '@/app/ui/style-library/global/tokens/mixins' as vars;
+
+@mixin headerlinkDefaults {
+	height: auto;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 1.6rem;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	@include vars.break(mobile) {
+		line-height: 2;
+	}
+	&:hover {
+		color: var(--color-fg);
+	}
+}
+
+.header {
+	z-index: 2;
+	position: relative;
+	background-color: var(--color-bg);
+	@include vars.light-mode-wrapper {
+		background-color: var(--color-bg-off-solid);
+	}
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-image: linear-gradient(to right, var(--color-accent), var(--color-accent-alt)) 1;
+	@include vars.light-mode-wrapper {
+		border-image: unset;
+		border-bottom: 1px solid var(--color-fg-70);
+	}
+	&__inner {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		@include vars.break(tablet) {
+			flex-direction: row;
+			width: 100%;
+		}
+	}
+	&__sitename {
+		all: unset;
+		padding-left: var(--gutter-padding);
+		padding-right: var(--gutter-padding);
+		flex-grow: 1;
+		width: 100%;
+		border-bottom: 1px solid;
+		@include vars.break(tablet) {
+			padding-left: 0;
+			border: none;
+			width: unset;
+		}
+		&__link {
+			@include headerlinkDefaults;
+			@include vars.text-blocky;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0 0.5em;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			color: var(--color-accent);
+			span {
+				display: block;
+			}
+		}
+	}
+	&__nav {
+		gap: 0 1em;
+		padding-left: var(--gutter-padding);
+		padding-right: var(--gutter-padding);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		@include vars.break(tablet) {
+			flex-grow: unset;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			padding-left: unset;
+			padding-right: 1.3em;
+		}
+		&__link {
+			@include headerlinkDefaults;
+			color: var(--color-accent);
+			gap: 0.5em;
+			span {
+				display: block;
+			}
+			@mixin svgDefaults {
+				fill: currentColor;
+			}
+			.arrow {
+				@include svgDefaults;
+				transform: rotate(180deg);
+			}
+			.arrow____reverse {
+				@include svgDefaults;
+			}
+		}
+	}
+	&__modeSwitcher{
+		margin: 0;
+		border-left: 1px solid var(--color-accent-alt);
+		padding: 1em;
+		display: flex;
+		align-items: center;
+		color: var(--color-accent);
+		&:hover{
+			color: var(--color-fg);
+		}
+	}
+}
