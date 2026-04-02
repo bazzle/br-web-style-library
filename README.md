@@ -6,13 +6,35 @@ Personal design system — tokens, global styles, and composable components. Thi
 
 This repo is consumed as a **git submodule**. It contains source files only — no build step, no compiled output, no dependencies. The consuming website's Next.js pipeline handles all compilation.
 
-## Setup in a new project
+## Setup in a new project and install required dependencies
+
+NextJS
+```bash
+yarn create next-app@latest my-app --yes
+```
+
+next-theme for dark/light mode
+```bash
+$ npm install next-themes
+# or
+$ yarn add next-themes
+```
 
 ### 1. Add the submodule
 
 ```bash
 git submodule add https://github.com/bazzle/br-web-style-library app/ui/style-library
 ```
+
+### 2. Install dependencies
+
+next-theme
+```bash
+$ npm install next-themes
+# or
+$ yarn add next-themes
+```
+
 
 ### 2. Configure import aliases
 
