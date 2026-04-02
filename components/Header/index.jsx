@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import styles from './Header.module.scss'
-import Icons from '@/app/ui/project/misc/Icons'
+import Icons from '@/app/ui/style-library/misc/Icons'
 import { useTheme } from 'next-themes'
 
 function Header({ headerTitle, headingLevel, navLinks }) {
