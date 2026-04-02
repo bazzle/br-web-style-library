@@ -35,7 +35,11 @@ function Header({ headerTitle, headingLevel, navLinks }) {
 		)
 	}
 
-	const headerInner = <Link className={styles.header__sitename__link} href="/">{headerTitle}</Link>
+	const headerInner = (
+		<Link className={styles.header__sitename__link} href="/">
+			{headerTitle ? headerTitle : 'Header title'}
+		</Link>
+	)
 
 	const h1Heading = <h1 className={styles.header__sitename}>{headerInner}</h1>
 	const h2Heading = <h2 className={styles.header__sitename}>{headerInner}</h2>
