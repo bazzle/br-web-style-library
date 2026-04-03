@@ -47,7 +47,7 @@ button {
 	text-decoration: 0;
 	cursor: pointer;
 	&.button {
-		@include vars.text-link-defaults;
+		@include vars.button;
 	}
 }
 
