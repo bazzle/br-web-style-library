@@ -1,6 +1,6 @@
 import styles from './Icons.module.scss'
 
-export const Icons = {
+const Icons = {
 	skull: (
 		<svg width="16" height="18" viewBox="0 0 170 191" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
@@ -117,3 +117,4 @@ export const Icons = {
 	),
 }
 
+export default Icons
