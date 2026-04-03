@@ -326,8 +326,8 @@ $breakpoints--h: (
 }
 
 @mixin button{
-	background: transparent;
-	border: 1px solid var(--color-fg);
+	background: var(--color-bg);
+	border: .5px solid var(--color-fg);
 	color: var(--color-accent);
 	text-decoration: none;
 	padding: 0.8em 1.2em;
