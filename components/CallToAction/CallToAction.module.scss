@@ -1,0 +1,46 @@
+@use '@/app/ui/style-library/global/tokens/mixins' as vars;
+
+.callToAction {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: var(--block-spacing);
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		.callToAction__button {
+			@include vars.break-under(tablet) {
+				border-right: 0;
+			}
+		}
+		&:last-of-type {
+			.divider {
+				display: none;
+			}
+			.callToAction__button {
+				@include vars.break-under(tablet) {
+					border-right: 1px solid var(--color-fg);
+				}
+			}
+		}
+	}
+	&__button {
+		background: transparent;
+		border: 1px solid var(--color-fg);
+		color: var(--color-accent);
+		text-decoration: none;
+		padding: 0.8em 1.2em;
+		flex-shrink: 0;
+	}
+	.divider {
+		height: 1px;
+		width: clamp(0.5rem, 2.5vw, 50px);
+		background-color: var(--color-accent-50);
+		@include vars.break-under(tablet) {
+			display: none;
+		}
+	}
+}
