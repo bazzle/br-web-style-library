@@ -330,6 +330,10 @@ $breakpoints--h: (
 	display: inline-flex;
 	align-items: center;
 	gap: 1em;
+	font-weight: 350;
+	[data-theme='dark'] & {
+		font-weight: 550;
+	}
 	&:hover{
 		color: var(--color-fg-inv);
 		text-decoration: underline;
