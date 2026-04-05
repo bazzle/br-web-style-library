@@ -62,7 +62,7 @@ textarea {
 }
 
 a {
-	@include vars.text-link-defaults;
+	@include vars.text-link;
 }
 
 a,
