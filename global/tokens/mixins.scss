@@ -336,7 +336,6 @@ $breakpoints--h: (
 	display: inline-flex;
 	align-items: center;
 	gap: 1em;
-	margin-bottom: var(--block-spacing--text);
 	&:hover{
 		color: var(--color-accent-fg);
 	}
