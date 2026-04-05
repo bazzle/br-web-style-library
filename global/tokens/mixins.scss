@@ -182,7 +182,7 @@ $breakpoints--h: (
 	text-underline-offset: 0.1em;
 	text-decoration-thickness: 0.05em;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 450;
 	&:hover {
 		text-decoration: none;
 		color: var(--color-fg);
@@ -190,20 +190,14 @@ $breakpoints--h: (
 }
 
 @mixin text-link {
-	font-family: var(--font-body);
 	@include text-link-defaults;
+	font-family: var(--font-body);
 }
 
 @mixin standalone-link {
 	@include text-link-defaults;
 	font-size: var(--font-size-std);
 	font-family: var(--font-std);
-	color: var(--color-accent);
-	text-decoration: underline;
-	text-underline-offset: 0.1em;
-	text-decoration-thickness: 0.05em;
-	font-style: normal;
-	font-weight: 550;
 	&:hover {
 		text-decoration: none;
 	}
