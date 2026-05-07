@@ -21,15 +21,13 @@
 	z-index: 2;
 	position: relative;
 	background-color: var(--color-bg);
-	@include vars.light-mode-wrapper {
-		background-color: var(--color-bg-off-solid);
-	}
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-image: linear-gradient(to right, var(--color-accent), var(--color-accent-alt)) 1;
 	@include vars.light-mode-wrapper {
+		background-color: var(--color-bg-off-solid);
 		border-image: unset;
-		border-bottom: 1px solid var(--color-fg-70);
+		border-bottom: 1px solid var(--color-fg-50);
 	}
 	&__inner {
 		display: flex;
