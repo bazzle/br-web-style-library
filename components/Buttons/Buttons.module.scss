@@ -32,10 +32,7 @@
 	}
 	.divider {
 		height: 1px;
-		width: clamp(0.5rem, 2.5vw, 50px);
+		width: clamp(1rem, 5vw, 10rem);
 		background-color: var(--color-accent-50);
-		@include vars.break-under(tablet) {
-			display: none;
-		}
 	}
 }
