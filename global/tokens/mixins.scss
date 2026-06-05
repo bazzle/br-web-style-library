@@ -10,6 +10,11 @@
 		@content;
 	}
 }
+@mixin dark-mode-wrapper {
+	[data-theme='dark'] & {
+		@content;
+	}
+}
 
 /* Colours ------------------------------------------------- */
 
