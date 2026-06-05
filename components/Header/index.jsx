@@ -48,7 +48,7 @@ function Header({ headerTitle, headingLevel, navLinks }) {
 
 	return (
 		<header className={styles.header}>
-			<div className="container____toEdgesMobile">
+			<div className={styles.header__container}>
 				<div className={styles.header__inner}>
 					{headingOutput}
 					{navLinks && (
