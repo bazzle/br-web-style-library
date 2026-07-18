@@ -54,6 +54,8 @@
 		flex-grow: 1;
 		width: 100%;
 		border-bottom: 1px solid;
+		display: flex;
+		justify-content: flex-start;
 		@include vars.break(tablet) {
 			padding-left: 0;
 			border: none;
