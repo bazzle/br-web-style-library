@@ -1,12 +1,52 @@
 :root {
-	--color-f: #ffffff;
-	--color-fg-in: #2c2c2c;
-	--color-accent-7: rgb(154, 243, 255);
-	--color-accent: rgb(154, 243, 255);
-	--color-accent-al: rgb(255, 170, 170);
-	--color-accent-alt-7: rgb(255, 170, 170, 0.7);
-	--color-b: rgb(32, 32, 32);
-	--color-bg-al: rgb(22, 22, 22);
+	--color-white: #ffffff;
+	--color-black: #2c2c2c;
+
+	/* Colours */
+
+	/* teal — for dark surfaces */
+	--color-teal-on-dark-100: rgb(44, 53, 54);
+	--color-teal-on-dark-200: rgb(56, 74, 77);
+	--color-teal-on-dark-300: rgb(69, 95, 99);
+	--color-teal-on-dark-400: rgb(81, 116, 121);
+	--color-teal-on-dark-500: rgb(93, 138, 144);
+	--color-teal-on-dark-600: rgb(105, 159, 166);
+	--color-teal-on-dark-700: rgb(117, 180, 188);
+	--color-teal-on-dark-800: rgb(130, 201, 210);
+	--color-teal-on-dark-900: rgb(154, 243, 255);
+
+	/* teal — for light surfaces */
+	--color-teal-on-light-100: rgb(221, 227, 228);
+	--color-teal-on-light-200: rgb(204, 216, 217);
+	--color-teal-on-light-300: rgb(187, 205, 207);
+	--color-teal-on-light-400: rgb(170, 194, 197);
+	--color-teal-on-light-500: rgb(152, 182, 186);
+	--color-teal-on-light-600: rgb(135, 171, 176);
+	--color-teal-on-light-700: rgb(118, 160, 166);
+	--color-teal-on-light-800: rgb(101, 149, 156);
+	--color-teal-on-light-900: rgb(67, 127, 135);
+
+	/* teal-alt / coral — for dark surfaces (over #202020) */
+	--color-coral-on-dark-100: rgb(54, 46, 46);
+	--color-coral-on-dark-200: rgb(77, 60, 60);
+	--color-coral-on-dark-300: rgb(99, 73, 73);
+	--color-coral-on-dark-400: rgb(121, 87, 87);
+	--color-coral-on-dark-500: rgb(144, 101, 101);
+	--color-coral-on-dark-600: rgb(166, 115, 115);
+	--color-coral-on-dark-700: rgb(188, 129, 129);
+	--color-coral-on-dark-800: rgb(210, 142, 142);
+	--color-coral-on-dark-900: rgb(255, 170, 170);
+
+	/* coral — for light surfaces (over #eeeeee) */
+	--color-coral-on-light-100: rgb(232, 222, 222);
+	--color-coral-on-light-200: rgb(226, 205, 205);
+	--color-coral-on-light-300: rgb(220, 189, 189);
+	--color-coral-on-light-400: rgb(214, 172, 172);
+	--color-coral-on-light-500: rgb(208, 156, 156);
+	--color-coral-on-light-600: rgb(203, 140, 140);
+	--color-coral-on-light-700: rgb(197, 123, 123);
+	--color-coral-on-light-800: rgb(191, 107, 107);
+	--color-coral-on-light-900: rgb(179, 74, 74);
 
 	/* Layout */
 	--block-spacing--shallow--static: 2rem;
