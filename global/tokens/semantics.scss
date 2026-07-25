@@ -1,8 +1,34 @@
-/* semantics.css */
+:root {
+/* Type — fluid roles */
+	--font-size-display: clamp(var(--font-size-650),11vw,var(--font-size-1100));
+	--font-size-display-large: clamp(var(--font-size-650),8vw, var(--font-size-1250));
+	--font-size-display-medium: clamp(var(--font-size-480),8vw, var(--font-size-800));
+	--font-size-display-small: clamp(var(--font-size-260),4vw, var(--font-size-400));
+	--font-size-heading-large: clamp(var(--font-size-340),3.8vw, var(--font-size-380));
+	--font-size-heading: clamp(var(--font-size-260),2.8vw, var(--font-size-280));
+	--font-size-heading-small: clamp(var(--font-size-210),2.2vw, var(--font-size-220));
+	--font-size-medium: clamp(var(--font-size-220),3.2vw, var(--font-size-320));
+	--font-size-body-intro:  clamp(var(--font-size-210),2.4vw, var(--font-size-240));
+	--font-size-std: clamp(var(--font-size-150),1.8vw, var(--font-size-180));
+	--font-size-blocky: clamp(var(--font-size-165),1.8vw, var(--font-size-180));
+	--font-size-tiny: var(--font-size-140);
+	--font-size-miniscule: var(--font-size-125);
+
+/* Space — fluid roles */
+	--block-spacing-tiny: clamp(var(--space-100), 3vw,var(--space-300));
+	--block-spacing-text: clamp(var(--space-100), 3vw,var(--space-300));
+	--block-spacing-shallow: clamp(var(--space-200), 4vw,var(--space-450));
+	--block-spacing: clamp(var(--space-350), 6vw,var(--space-650));
+	--block-spacing-deep: clamp(var(--space-800), 12vw, var(--space-1400));
+	--column-gap: clamp(var(--space-200), 5vw,var(--space-500));
+	--block-spacing-shallow-static: var(--space-200);
+}
 
 /* themed colour */
-[data-theme='dark']  {
+[data-theme='dark']{
 	--color-fg: #ffffff;
+	--color-fg-30: #ffffff;
+	--color-fg-70: #ffffff;
 	--color-fg-inv: #2c2c2c;
 	--color-accent: rgb(154, 243, 255);
 	--color-accent-10: rgb(154, 243, 255, 0.1);
@@ -11,8 +37,11 @@
 	--color-accent-40: rgb(154, 243, 255, 0.4);
 	--color-accent-50: rgb(154, 243, 255, 0.5);
 	--color-accent-70: rgb(154, 243, 255, 0.7);
+	--color-accent-faded: #9af3ff76;
 	--color-accent-alt: rgb(255, 170, 170);
+	--color-accent-alt-50: rgb(255, 170, 170, 0.5);
 	--color-accent-alt-70: rgb(255, 170, 170, 0.7);
+	--color-accent-alt-faded: rgba(255, 170, 170, 0.388);
 	--color-bg: rgb(32, 32, 32);
 	--color-bg-inv: rgb(227, 227, 227);
 	--color-bg-alt: rgb(22, 22, 22);
@@ -20,23 +49,29 @@
 	--color-bg-washed: rgb(47, 47, 47);
 	--color-bg-off-solid: #151515;
 	--color-bg-solid: #000000;
+	--color-bg-solid-30: rgba(0, 0, 0, 0.3);
+	--color-bg-solid-50: rgba(0, 0, 0, 0.5);
 	--color-focus: rgb(154, 243, 255);
-	--color-accent-faded: #9af3ff76;
-	--color-accent-alt-faded: rgba(255, 170, 170, 0.388);
 	--color-ridged-line-shadow: rgba(0, 0, 0, 0.7);
 	--color-ridged-line-light: rgba(255, 255, 255, 0.16);
 }
 [data-theme='light'] {
 	--color-fg: rgb(67, 67, 67);
-	--color-fg-50: rgba(67, 67, 67, 0.3);
+	--color-fg-30: rgba(67, 67, 67, 0.3);
 	--color-fg-70: rgba(67, 67, 67, 0.7);
 	--color-fg-inv: #ffffff;
 	--color-accent: rgb(54, 117, 126);
+	--color-accent-10: rgb(67, 127, 135, 0.1);
 	--color-accent-20: rgb(67, 127, 135, 0.2);
+	--color-accent-30: rgb(67, 127, 135, 0.3);
+	--color-accent-40: rgb(67, 127, 135, 0.4);
 	--color-accent-50: rgb(67, 127, 135, 0.5);
+	--color-accent-70: rgb(67, 127, 135, 0.7);
+	--color-accent-faded: rgb(54, 117, 126);
 	--color-accent-alt: rgb(179, 74, 74);
 	--color-accent-alt-50: rgba(185, 89, 89, 0.5);
 	--color-accent-alt-70: rgba(185, 89, 89, 0.7);
+	--color-accent-alt-faded: rgb(179, 74, 74);
 	--color-bg: rgb(238, 238, 238);
 	--color-bg-light: rgb(44, 44, 44);
 	--color-bg-70: rgb(227, 227, 227, 0.7);
@@ -47,8 +82,8 @@
 	--color-bg-off-solid: rgb(248, 248, 248);
 	--color-bg-off-solid-70: rgba(248, 248, 248, 0.7);
 	--color-bg-solid: #ffffff;
-	--color-bg-solid-50: rgba(255, 255, 255, 0.5);
 	--color-bg-solid-30: rgba(255, 255, 255, 0.3);
+	--color-bg-solid-50: rgba(255, 255, 255, 0.5);
 	--color-focus: rgb(56, 106, 113);
 	--color-ridged-line-shadow: rgba(0, 0, 0, 0.05);
 	--color-ridged-line-light: rgb(255, 255, 255);

@@ -24,25 +24,6 @@
 	--extended-width: 1600px;
 	--outline-focus: 2px solid var(--color-focus);
 
-	/* Typography — font sizes */
-	// Display
-	--font-size-display: clamp(6.6rem, 11vw, 11rem);
-	--font-size-display-medium: clamp(4.8rem, 8vw, 8rem);
-	--font-size-display-small: clamp(2.6rem, 4vw, 4rem);
-	--font-size-display-large: clamp(6.5rem, 8vw, 12.5rem);
-	// Heading
-	--font-size-heading: clamp(2.66rem, 2.8vw, 2.8rem);
-	--font-size-heading-small: clamp(2.09rem, 2.2vw, 2.2rem);
-	--font-size-heading-large: clamp(3.42rem, 3.8vw, 3.8rem);
-	// Body
-	--font-size-std: clamp(1.53rem, 1.8vw, 1.8rem);
-	--font-size-medium: clamp(2.24rem, 3.2vw, 3.2rem);
-	// Others
-	--font-size-body-intro: clamp(2.112rem, 2.4vw, 2.4rem);
-	--font-size-blocky: clamp(1.656rem, 1.8vw, 1.8rem);
-	--font-size-tiny: 1.4rem;
-	--font-size-miniscule: 1.25rem;
-
 	/* Typography — font families */
 	--font-editorial: 'degular-variable', sans-serif;
 	--font-body: 'degular-variable', sans-serif;
@@ -53,4 +34,35 @@
 
 	/* Typography — misc */
 	--opsz-regular: 10;
+	/* Font size — name = rem × 100 */
+	--font-size-125: 1.25rem;
+	--font-size-140: 1.4rem;
+	--font-size-150: 1.5rem;
+	--font-size-165: 1.65rem;
+	--font-size-180: 1.8rem;
+	--font-size-210: 2.1rem;
+	--font-size-220: 2.2rem;
+	--font-size-240: 2.4rem;
+	--font-size-260: 2.6rem;
+	--font-size-280: 2.8rem;
+	--font-size-320: 3.2rem;
+	--font-size-340: 3.4rem;
+	--font-size-380: 3.8rem;
+	--font-size-400: 4rem;
+	--font-size-480: 4.8rem;
+	--font-size-650: 6.5rem;
+	--font-size-800: 8rem;
+	--font-size-1100: 11rem;
+	--font-size-1250: 12.5rem;
+
+  /* Space — name = rem × 100 */
+	--space-100: 1rem;
+	--space-200: 2rem;
+	--space-300: 3rem;
+	--space-350: 3.5rem;
+	--space-450: 4.5rem;
+	--space-500: 5rem;
+	--space-650: 6.5rem;
+	--space-800: 8rem;
+	--space-1400: 14rem;
 }
