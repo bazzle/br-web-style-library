@@ -336,7 +336,7 @@ $breakpoints--h: (
 	align-items: center;
 	gap: 1em;
 	font-weight: 350;
-	outline: 1px solid var(--color-accent-50);
+	outline: 1px solid var(--color-accent-moderate);
 	outline-offset: 0;
 	@include break(tablet){
 		outline-offset: 12px;
