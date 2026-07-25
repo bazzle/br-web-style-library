@@ -1,4 +1,5 @@
-@use 'tokens/vars';
+@use 'tokens/primitives';
+@use 'tokens/semantics';
 @use 'reset';
 @use 'base';
 @use 'layout';
