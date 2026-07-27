@@ -56,7 +56,7 @@ function Header({ headerTitle, headingLevel, navLinks }) {
 							{navLinks.map((item, index) => linkOutput(item, index))}
 						</nav>
 					)}
-					<button className={styles.header__modeSwitcher} onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+					<button className={styles.header__modeSwitcher} type="button" onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
 						{Icons.modeSwitcher}
 					</button>
 				</div>
